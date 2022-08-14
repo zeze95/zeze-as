@@ -6,19 +6,10 @@ interface IBasketItems {
   writer: string;
   title: string;
 }
-export default function Today() {
-  const [todaysItems, setTodaysItems] = useState([]);
+export default function Today(props) {
+  // const onErrorE = image => {
+  //   image.target.src = `https://storage.googleapis.com/${props.todaysItems[e].images[1]}`;
+  // };
 
-  useEffect(() => {
-    const todays = JSON.parse(sessionStorage.getItem("todays") || "[]");
-
-    setTodaysItems(todays);
-    sessionStorage.getItem("todays");
-  }, []);
-
-  const onErrorE = (e) => {
-    e.target.src = `https://storage.googleapis.com/${todaysItems[e].images[1]}`;
-  };
-
-  return <TodayUI todaysItems={todaysItems} onErrorE={onErrorE} />;
+  return <TodayUI todaysItems={props.todaysItems} />;
 }

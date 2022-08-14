@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const FlexBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
 `;
@@ -17,6 +18,9 @@ export const Header = styled.div`
   height: 100px;
   display: flex;
   flex-direction: row;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 `;
 
 export const TypeBtn = styled.div`

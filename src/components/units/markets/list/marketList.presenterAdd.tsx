@@ -5,12 +5,20 @@ export default function MarketListUIAdd(props) {
     <div onClick={props.onClickTodays(props.el)}>
       <S.ListDiv>
         <S.ImgWrapper>
-          {props.el?.images[0] ? (
+          {props.el?.images[0] && (
             <S.TitleImg
-              src={`https://storage.googleapis.com/${props.el?.images[0]}`} // 인덱스는 내가 임의로 넣음; 디테일에선 맵에 뿌리니깐 el로 넣는데 다른걸로 넣어야함
+              src={`https://storage.googleapis.com/${props.el?.images[0]}`}
             ></S.TitleImg>
-          ) : (
-            ""
+          )}
+          {!props.el?.images[0] && props.el?.images[1] && (
+            <S.TitleImg
+              src={`https://storage.googleapis.com/${props.el?.images[1]}`}
+            ></S.TitleImg>
+          )}
+          {!props.el?.images[0] && !props.el?.images[1] && (
+            <S.TitleImg
+              src={"/camp/day-night/animat-day-night-color.gif"}
+            ></S.TitleImg>
           )}
         </S.ImgWrapper>
         <S.TitleBox>

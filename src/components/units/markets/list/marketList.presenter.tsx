@@ -2,7 +2,6 @@ import * as S from "./marketList.styles";
 import InfiniteScroll from "react-infinite-scroller";
 import MarketListUIAdd from "./marketList.containerAdd";
 import Searchbar from "../../../commons/searchbars/02/Searchbars.container";
-import Today from "../today/today.container";
 
 export default function MarketListUI(props) {
   return (
@@ -24,7 +23,7 @@ export default function MarketListUI(props) {
             loadMore={props.ToloadFunc}
             hasMore={true}
           >
-            {props.data?.fetchUseditems.map((el) => (
+            {props.data?.fetchUseditems.map(el => (
               <MarketListUIAdd data={props.data} key={el._id} el={el} />
             ))}
           </InfiniteScroll>
