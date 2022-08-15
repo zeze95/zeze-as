@@ -28,7 +28,7 @@ export default function MarketListAdd(props) {
     router.push(`/markets/${MarketDetail.currentTarget.id}`);
   };
 
-  const onError = error => {
+  const onError = (error: any) => {
     error.target.src = "/camp/day-night/animat-day-night-color.gif";
   };
   return (
