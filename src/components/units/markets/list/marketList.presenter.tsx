@@ -2,6 +2,7 @@ import * as S from "./marketList.styles";
 import InfiniteScroll from "react-infinite-scroller";
 import MarketListUIAdd from "./marketList.containerAdd";
 import Searchbar from "../../../commons/searchbars/02/Searchbars.container";
+import { BackTop } from "antd";
 
 export default function MarketListUI(props) {
   return (
@@ -29,6 +30,7 @@ export default function MarketListUI(props) {
           </InfiniteScroll>
         </S.Wrapper>
         <S.SideBox>{/* <Today /> */}</S.SideBox>
+        <BackTop />
       </S.FlexBox>
     </>
   );

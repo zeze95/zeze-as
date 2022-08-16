@@ -7,8 +7,9 @@ import {
   FETCH_USEDITEMS_I_PICKED,
   POINT_BUYING_AND_SELLING,
 } from "./marketDetail.quries";
-import { basketState } from "../../../../commons/store";
-import { useRecoilState } from "recoil";
+// import { basketState } from "../../../../commons/store";
+// import { useRecoilState } from "recoil";
+import { Modal } from "antd";
 
 export default function MarketsDetail() {
   const router = useRouter();
@@ -21,11 +22,11 @@ export default function MarketsDetail() {
   );
   const [toggleUseditemPick] = useMutation(FETCH_USEDITEMS_I_PICKED);
   const [deleteUseditem] = useMutation(DELETE_USED_ITEM);
-  const [basket, setBasket] = useRecoilState(basketState);
+  // const [basket, setBasket] = useRecoilState(basketState);
   const onClcikMoveToList = () => {
     router.push("/markets");
   };
-  const onClickBuy = async (event) => {
+  const onClickBuy = async () => {
     try {
       await createPointTransactionOfBuyingAndSelling({
         variables: {
@@ -69,19 +70,19 @@ export default function MarketsDetail() {
     });
   };
 
-  const onClickBasket = (el) => () => {
+  const onClickBasket = (item: any) => () => {
     const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
 
-    const temp = baskets.filter((basketEl) => basketEl._id === el._id);
+    const temp = baskets.filter(basketItem => basketItem._id === item._id);
     if (temp.length === 1) {
-      alert("이미 담으신 물품입니다.");
+      Modal.error({ content: "이미 담으신 물품입니다." });
       return;
     }
     // 3. 장바구니에 담기
-    const { _typename, ...newEl } = el;
-    baskets.push(newEl);
+    const { _typename, ...newItem } = item;
+    baskets.push(newItem);
     localStorage.setItem("baskets", JSON.stringify(baskets));
-    alert("장바구니에 담겼습니다.");
+    Modal.success({ content: "장바구니에 담겼습니다." });
   };
 
   // 삭제 함수 만들예정
