@@ -8,14 +8,17 @@ import {
   POINT_BUYING_AND_SELLING,
 } from "./marketDetail.quries";
 // import { basketState } from "../../../../commons/store";
-// import { useRecoilState } from "recoil";
 import { Modal } from "antd";
+import { useMoveToPage } from "../../../commons/hooks/useMoveToPage";
+import { useRecoilState } from "recoil";
+import { accessTokenState } from "../../../../commons/store";
 
 export default function MarketsDetail() {
   const router = useRouter();
   const { data } = useQuery(FETCH_USED_ITEM, {
     variables: { useditemId: router.query._id },
   });
+  const { onClickMoveToPage } = useMoveToPage();
 
   const [createPointTransactionOfBuyingAndSelling] = useMutation(
     POINT_BUYING_AND_SELLING
@@ -23,9 +26,8 @@ export default function MarketsDetail() {
   const [toggleUseditemPick] = useMutation(FETCH_USEDITEMS_I_PICKED);
   const [deleteUseditem] = useMutation(DELETE_USED_ITEM);
   // const [basket, setBasket] = useRecoilState(basketState);
-  const onClcikMoveToList = () => {
-    router.push("/markets");
-  };
+  const [accessToken] = useRecoilState(accessTokenState);
+
   const onClickBuy = async () => {
     try {
       await createPointTransactionOfBuyingAndSelling({
@@ -40,9 +42,9 @@ export default function MarketsDetail() {
     }
   };
 
-  const onClickMoveToEdit = () => {
-    router.push(`/markets/${router.query._id}/edit`);
-  };
+  // const onClickMoveToEdit = () => {
+  //   router.push(`/markets/${router.query._id}/edit`);
+  // };
 
   const onClickDelete = async () => {
     try {
@@ -85,17 +87,17 @@ export default function MarketsDetail() {
     Modal.success({ content: "장바구니에 담겼습니다." });
   };
 
-  // 삭제 함수 만들예정
   return (
     <>
       <MarketsDetailUI
         data={data}
         onClickPick={onClickPick}
-        onClcikMoveToList={onClcikMoveToList}
+        onClickMoveToPage={onClickMoveToPage}
         onClickBuy={onClickBuy}
-        onClickMoveToEdit={onClickMoveToEdit}
+        router={router}
         onClickDelete={onClickDelete}
         onClickBasket={onClickBasket}
+        accessToken={accessToken}
       />
     </>
   );

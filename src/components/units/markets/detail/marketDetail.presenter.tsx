@@ -1,10 +1,10 @@
 import * as S from "./marketDetail.styles";
 import Dompurify from "dompurify";
 import { Tooltip } from "antd";
-import PaymentPage from "../../../../../pages/markets/payment/index";
 import KakakomapPage from "../../../../commons/libraries/kakao.map";
+import { IMarketsDetailUI } from "./marketDetail.types";
 
-export default function MarketsDetailUI(props: any) {
+export default function MarketsDetailUI(props: IMarketsDetailUI) {
   return (
     <>
       <S.Wrapper>
@@ -57,9 +57,7 @@ export default function MarketsDetailUI(props: any) {
                 }}
               />
             )}
-            <div onClick={props.onClickBasket(props.data?.fetchUseditem)}>
-              장바구니
-            </div>
+            <div onClick={props.onClickBasket}>장바구니</div>
             <S.PriceBox>
               판매 가격 : {props.data?.fetchUseditem?.price}
             </S.PriceBox>
@@ -71,10 +69,16 @@ export default function MarketsDetailUI(props: any) {
         </S.MainWrapper>
       </S.Wrapper>
       <S.BtnWrapper>
-        <S.Btn onClick={props.onClcikMoveToList}>목록으로</S.Btn>
+        <S.Btn onClick={props.onClickMoveToPage("/markets")}>목록으로</S.Btn>
         {props.accessToken ? (
           <>
-            <S.Btn onClick={props.onClickMoveToEdit}>수정하기</S.Btn>
+            <S.Btn
+              onClick={props.onClickMoveToPage(
+                `/markets/${props.router.query._id}/edit`
+              )}
+            >
+              수정하기
+            </S.Btn>
             <S.Btn onClick={props.onClickDelete}>삭제하기</S.Btn>
           </>
         ) : (

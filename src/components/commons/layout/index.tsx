@@ -47,7 +47,7 @@ export default function Layout(props: ILayoutProps) {
       {!hidden_Layout ? (
         <>
           <LayoutHeader />
-          <LayoutBanner />
+          {/* <LayoutBanner /> */}
           <LayoutNavigation />
           <FlexBox>
             <LayoutSide />
