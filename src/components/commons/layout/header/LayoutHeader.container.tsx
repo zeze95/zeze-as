@@ -13,8 +13,8 @@ export default function LayoutHeader() {
   const { onClickMoveToPage } = useMoveToPage();
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [logoutUser] = useMutation(LOGOUT);
-  const onClickMoveTopage = (e) => {
-    onClickMoveToPage(e.target.id)();
+  const onClickMoveTopage = Page => {
+    onClickMoveToPage(Page.target.id)();
   };
 
   const onClickLogout = () => {
@@ -26,6 +26,7 @@ export default function LayoutHeader() {
   return (
     <>
       <LayoutHeaderUI
+        accessToken={accessToken}
         onClickMoveTopage={onClickMoveTopage}
         onClickLogout={onClickLogout}
       />

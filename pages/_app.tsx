@@ -29,17 +29,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <RecoilRoot>
-        {/* // <GlobalContext.Provider value={{ isEdit, setIsEdit }}> */}
         <ApolloSetting>
           <Global styles={globalStyles} />
           <Layout>
             <Component {...pageProps} />
           </Layout>
         </ApolloSetting>
-        {/* /// </GlobalContext.Provider> */}
       </RecoilRoot>
     </>
-    // useMutation이 이용 가능하게
   );
 }
 

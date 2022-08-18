@@ -10,12 +10,12 @@ export default function LayoutNavigation() {
     if (event.target instanceof Element) router.push(event.target.id);
   };
   const toggleMenu = () => {
-    setIsOpen((prev) => !prev); // on,off 개념 boolean
+    setIsOpen(prev => !prev); // on,off 개념 boolean
   };
   const menuList = [
     { name: "자유게시판", page: "/boards" },
     { name: "구매 장터", page: "/markets" },
-    { name: "캠핑 후기", page: "/talk" },
+    { name: "참고 사이트", page: "/sitelink" },
     { name: "고객 센터", page: "/help" },
   ];
 

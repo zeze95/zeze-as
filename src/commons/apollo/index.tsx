@@ -16,7 +16,7 @@ import { getAccessToken } from "../libraries/getAccessToken";
 export default function ApolloSetting(props) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   useEffect(() => {
-    getAccessToken().then((newAccessToken) => {
+    getAccessToken().then(newAccessToken => {
       setAccessToken(newAccessToken);
     });
   }, []);
@@ -25,7 +25,7 @@ export default function ApolloSetting(props) {
     if (graphQLErrors) {
       for (const err of graphQLErrors) {
         if (err.extensions.code === "UNAUTHENTICATED") {
-          getAccessToken().then((newAccessToken) => {
+          getAccessToken().then(newAccessToken => {
             setAccessToken(newAccessToken);
             operation.setContext({
               Headers: {

@@ -35,7 +35,7 @@ export default function CommentWrite(props: IBoardCommentWriteUIProps) {
     setContents(event.target.value);
   };
   const desc = ["1점", "2점", "3점", "4점", "5점"];
-  const onChangeStar = (star) => {
+  const onChangeStar = (star: number) => {
     setStar(star);
   };
 

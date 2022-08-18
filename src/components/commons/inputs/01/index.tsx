@@ -8,6 +8,7 @@ const LoginInput = styled.input`
   border-radius: 10px;
   border: 1px solid #7ecdf4;
   padding-left: 10px;
+  background-color: #ffffff;
 `;
 
 export default function Input01(props) {

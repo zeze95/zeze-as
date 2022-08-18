@@ -4,21 +4,21 @@ import { useRecoilState } from "recoil";
 import { MouseEventHandler } from "react";
 
 interface IProps {
+  accessToken: string;
   onClickLogout: () => void;
   onClickMoveTopage: MouseEventHandler<HTMLDivElement>;
 }
 
 export default function LayoutHeaderUI(props: IProps) {
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   return (
     <>
       <S.Wrapper>
-        <S.LogoMain onClick={props.onClickMoveTopage} id="/boards">
+        <S.LogoMain onClick={props.onClickMoveTopage} id="/main">
           <S.HeaderImg src="/camp/road-trip/animat-road-trip-color.gif" />
           To The Moon
         </S.LogoMain>
         <S.MarginBox>
-          {accessToken ? (
+          {props.accessToken ? (
             <>
               <S.Btn onClick={props.onClickMoveTopage} id="/mypage">
                 {/* <S.LogoImg
