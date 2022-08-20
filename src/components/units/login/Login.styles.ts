@@ -1,17 +1,19 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1000px;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  padding: 50px 0;
+  gap: 2.4rem;
 `;
 
 export const InsideBox = styled.div`
   width: 800px;
   /* height: 500px; */
-  border: 1px solid #009dda;
+  border: 3px solid #6e85b7;
+  border-radius: 5px;
   margin: auto;
   padding: 60px 70px;
   display: flex;
@@ -23,10 +25,19 @@ export const Header = styled.div`
   width: 100%;
   height: 60px;
   font-size: 30px;
+  font-weight: 600;
   padding-bottom: 20px;
   display: flex;
   justify-content: center;
-  color: #9f8ecd;
+  color: #001d6e;
+`;
+export const HighLighting = styled.div`
+  opacity: 0.35;
+  width: 14em;
+  height: 1em;
+  margin-top: -2em;
+  margin-bottom: 0em;
+  background-color: #6e85b7;
 `;
 
 export const InputWrapper = styled.div`
@@ -34,9 +45,9 @@ export const InputWrapper = styled.div`
   height: 55%;
   display: flex;
   flex-direction: column;
-  margin: 40px 0px;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
+  margin: 40px 0px;
 `;
 
 export const LoginInput = styled.input`
@@ -44,7 +55,7 @@ export const LoginInput = styled.input`
   height: 50px;
   margin-bottom: 30px;
   border-radius: 10px;
-  border: 1px solid violet;
+  border: 1px solid 6e85b7;
   padding-left: 10px;
 `;
 

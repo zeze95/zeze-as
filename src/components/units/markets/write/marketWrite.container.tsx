@@ -26,6 +26,8 @@ export default function MarketWrite(props) {
   const [address, setAddress] = useState("");
   const [addressDetail, setAddressDetail] = useState("");
   const [fileUrls, setFileUrls] = useState(["", "", ""]);
+  const [, setHashtag] = useState<string | "">("");
+  const [tagsArr, setTagsArr] = useState<string[] | []>([]);
   const [createUseditem] = useMutation(CREATE_USED_ITEM);
   const [updateUseditem] = useMutation(UPDATE_USED_ITEM);
   const { register, handleSubmit, formState, setValue, trigger } = useForm({
@@ -37,17 +39,20 @@ export default function MarketWrite(props) {
     localStorage.getItem("accessToken");
   }, []);
 
-  // const onCompleteAddressSearch = (data: any) => {
-  //   setIsOpen(false);
-  //   // data.zonecode = { ...register("zipcode") };
-  //   // data.address = { ...register("address") };
-  //   // (data.addressDetail = { ...register("addressDetail") });
-  //   setZipcode(zipcode);
-  //   setAddressDetail(addressDetail);
-  //   console.log(data.address);
-  // };
+  const onKeyUp = (event: any) => {
+    if (event.keyCode === 32 && event.target.value !== " ") {
+      setTagsArr([...tagsArr, "#" + event.target.value]);
+      setHashtag("");
+      event.target.value = "";
+    }
+  };
 
-  const onClickWrite = async (data) => {
+  const deleteTags = (idx: number) => () => {
+    tagsArr.splice(idx, 1);
+    setTagsArr([...tagsArr]);
+  };
+
+  const onClickWrite = async data => {
     try {
       await createUseditem({
         variables: {
@@ -56,7 +61,7 @@ export default function MarketWrite(props) {
             remarks: data.remarks,
             contents: data.contents,
             price: data.price,
-            tags: data.tags,
+            tags: tagsArr,
             useditemAddress: {
               zipcode,
               address,
@@ -68,10 +73,8 @@ export default function MarketWrite(props) {
       });
       Modal.success({ content: "등록 완료" });
       router.push("/boards");
-      console.log(data);
     } catch (error) {
       Modal.error({ content: error.message });
-      console.log(error);
     }
   };
   const onChangeContets = (value: string) => {
@@ -84,7 +87,7 @@ export default function MarketWrite(props) {
     trigger("contets");
   };
 
-  const onClickUpdate = async (data) => {
+  const onClickUpdate = async data => {
     const currentFiles = JSON.stringify(fileUrls);
     const defaultFiles = JSON.stringify(props.boardData.updateUseditem?.images);
     const isChangedFiles = currentFiles !== defaultFiles;
@@ -173,6 +176,9 @@ export default function MarketWrite(props) {
         address={address}
         zipcode={zipcode}
         onChangeAddressDetail={onChangeAddressDetail}
+        deleteTags={deleteTags}
+        onKeyUp={onKeyUp}
+        tagsArr={tagsArr}
       ></MarketWirteUI>
     </>
   );

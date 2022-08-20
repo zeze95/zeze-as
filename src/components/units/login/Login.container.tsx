@@ -11,7 +11,7 @@ import { Modal } from "antd";
 
 export default function LoginPageContainer() {
   const [, setAccessToken] = useRecoilState(accessTokenState);
-  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+  const [userinfo, setUserInfo] = useRecoilState(userInfoState);
   const client = useApolloClient();
   const router = useRouter();
   const [loginUser] = useMutation(LOGIN_USER);
@@ -20,7 +20,7 @@ export default function LoginPageContainer() {
     email: yup
       .string()
       .matches(/\w+@\w+.\w+/, "정상적인 이메일이 아닙니다.")
-      .required("이메일은 필수 입력사항입니다"), // 문자형인지 보고 필수입력값으로 등록
+      .required("이메일은 필수 입력사항입니다"),
     password: yup
       .string()
       .matches(
@@ -29,13 +29,10 @@ export default function LoginPageContainer() {
       ),
   });
   const { register, handleSubmit, formState } = useForm({
-    resolver: yupResolver(schema), // 조건들을 넣은것
-    mode: "onChange", // 검증할 시간,상황
+    resolver: yupResolver(schema),
+    mode: "onChange",
   });
-
-  // formState 검증에 걸린다면 실행시킬것
-  // <div>{formState.errors.email?.message}</div> ?. 을 쓰는건 오류가 없을수도 있으니깐
-  const onClickLogin = async (data) => {
+  const onClickLogin = async (data: any) => {
     try {
       const result = await loginUser({
         variables: { email: data.email, password: data.password },
@@ -53,16 +50,14 @@ export default function LoginPageContainer() {
         },
       });
       const userInfo = resultUserInfo.data.fetchUserLoggedIn;
-      console.log(userInfo);
-
       // 3. 글로벌스테이트에 저장하기
       setAccessToken(accessToken);
       setUserInfo(userInfo);
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
-      Modal.success({ content: "로그인 완료" });
-      router.push("/boards");
+      Modal.success({ content: `${userinfo.name}님 환영합니다` });
+      router.push("/main");
     } catch (error) {
       Modal.error({ content: error.message });
     }

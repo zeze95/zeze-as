@@ -8,9 +8,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 25px;
-  border: 3px solid #7c83fd;
+  border: 3px solid #6e85b7;
   border-radius: 20px;
-  background-color: #f4f4f4;
+  background-color: #6e85b7;
 `;
 
 export const SideWrapper = styled.div`
@@ -28,7 +28,7 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px solid #7c83fd;
+  border: 3px solid #6e85b7;
   background-color: #ffffff;
   margin-right: auto;
   margin-bottom: 10px;
@@ -76,30 +76,27 @@ export const MyPoint = styled.div`
 
 export const SideMenuWrapper = styled.div`
   width: 100%;
-  height: 210px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 export const SideMenu = styled.div`
   width: 100%;
-  height: ${(props: IisActive) => (props.isActive ? "70px" : "60px")};
+  height: ${(props: IisActive) => (props.isActive ? "100px" : "60px")};
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
-  font-weight: ${(props: IisActive) => (props.isActive ? "900" : "600")};
-  color: ${(props: IisActive) => (props.isActive ? "#7C83FD" : "black")};
+  font-weight: ${(props: IisActive) => (props.isActive ? "800" : "600")};
+  color: ${(props: IisActive) => (props.isActive ? "#ffffff" : "black")};
   margin: ${(props: IisActive) => (props.isActive ? "0" : "5px 0")};
   background-color: ${(props: IisActive) =>
-    props.isActive ? "#ffffff" : "#ffffff"};
+    props.isActive ? "#243A73" : "#ffffff"};
   border: 3px solid
-    ${(props: IisActive) => (props.isActive ? "#7C83FD" : "#d2d2d2")};
+    ${(props: IisActive) => (props.isActive ? "#243A73" : "#d2d2d2")};
   border-right: none;
-  /* border-right: ${(props: IisActive) =>
-    props.isActive ? "none" : "3px solid #d2d2d2"}; */
-  border-radius: ${(props: IisActive) =>
-    props.isActive ? "10px 0 0 10px;" : "0px"};
+  border-radius: 10px 0 0 10px;
   cursor: pointer;
 `;
 export const SideMenuText = styled.div`
@@ -109,8 +106,7 @@ export const SideMenuText = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 5%;
-  background-color: ${(props: IisActive) =>
-    props.isActive ? "#ffffff" : "#ffffff"};
+  font-size: ${(props: IisActive) => (props.isActive ? "22px" : "16px")};
   border-radius: 10px 0 0 10px;
 `;
 
@@ -120,7 +116,7 @@ export const ListWrapeer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 3px solid #7c83fd;
+  border: 3px solid #6e85b7;
   border-radius: 0 10px 10px 0;
   background-color: #ffffff;
 `;

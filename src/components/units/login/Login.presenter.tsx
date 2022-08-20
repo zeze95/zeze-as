@@ -8,6 +8,7 @@ export default function LoginPageUI(props: any) {
       <S.Wrapper>
         <S.InsideBox>
           <S.Header>Login Page</S.Header>
+          <S.HighLighting />
           <S.LineDiv />
           <form onSubmit={props.handleSubmit(props.onClickLogin)}>
             <S.InputWrapper>

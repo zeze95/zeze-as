@@ -6,8 +6,8 @@ const LoginInput = styled.input`
   margin-bottom: 30px;
   margin-top: 10px;
   border-radius: 10px;
-  border: 1px solid #7ecdf4;
-  padding-left: 10px;
+  border: 1px solid #c4ddff;
+  padding-left: 15px;
   background-color: #ffffff;
 `;
 

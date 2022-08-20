@@ -26,6 +26,8 @@ export default function MarketListAdd(props) {
   // .unshift()
   const onClickMoveToMarketDetail = (MarketDetail: any) => {
     router.push(`/markets/${MarketDetail.currentTarget.id}`);
+
+    onClickTodays(MarketDetail);
   };
 
   const onError = (error: any) => {
@@ -37,7 +39,6 @@ export default function MarketListAdd(props) {
       key={props.key}
       onError={onError}
       el={props.el}
-      onClickTodays={onClickTodays}
       onClickMoveToMarketDetail={onClickMoveToMarketDetail}
       userdata={userdata}
     />

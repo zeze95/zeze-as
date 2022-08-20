@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   height: 50px;
-  background-image: linear-gradient(to right, #009dda, #a0d2f2);
+  background-image: linear-gradient(to right, #6e85b7, #c4d7e0);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,7 +41,7 @@ export const HeaderImg = styled.img`
 export const Btn = styled.span`
   width: 110px;
   height: 40px;
-  background-color: #bae3f9;
+  background-color: #f8f9d7;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@ export const Btn = styled.span`
 export const BtnA = styled.span`
   width: 160px;
   height: 40px;
-  background-color: #bae3f9;
+  background-color: #f8f9d7;
   border-radius: 10px;
   display: flex;
   align-items: center;

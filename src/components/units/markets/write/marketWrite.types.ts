@@ -1,5 +1,6 @@
+import { ChangeEvent } from "react";
 import {
-  FieldValue,
+  FieldValues,
   UseFormHandleSubmit,
   UseFormRegister,
 } from "react-hook-form";
@@ -12,7 +13,7 @@ export interface MyProps {
 
 export interface IMarketWirteUIProps {
   data?: any;
-  handleSubmit: UseFormHandleSubmit<FieldValue>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
   onClickWrite: any;
   onChangeContets: (value: string) => void;
   onClickUpdate: (data: any) => void;
@@ -29,4 +30,7 @@ export interface IMarketWirteUIProps {
   zipcode?: string;
   address?: string;
   addressDetail?: string;
+  tagsArr: string[] | [];
+  deleteTags: (index: number) => () => void;
+  onKeyUp: (event: any) => void;
 }

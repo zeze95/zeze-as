@@ -6,17 +6,18 @@ interface IActive {
 
 const Button = styled.button`
   background-color: ${(props: IActive) =>
-    props.isActive ? "#7ecef4" : "#d2d2d2"};
+    props.isActive ? "#B2C8DF" : "#C4D7E0"};
   width: 200px;
-  height: 30px;
-  border: 3px solid #a0d2f2;
+  height: 40px;
+  border: 3px solid #6e85b7;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   color: black;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 700;
 `;
 
 export default function Button01(props) {

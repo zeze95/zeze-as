@@ -60,11 +60,20 @@ export default function MarketWirteUI(props: IMarketWirteUIProps) {
                 defaultValue={props.boardData?.fetchUseditem.price}
               />
               태그입력
-              <Input02
-                type="text"
-                register={props.register("tags")}
-                defaultValue={props.boardData?.fetchUseditem.tags}
-              ></Input02>
+              <div>
+                <div>
+                  {props.tagsArr.map((el: any, index: number) => (
+                    <div key={index} onClick={props.deleteTags(index)}>
+                      {el}
+                    </div>
+                  ))}
+                </div>
+                <input
+                  type="text"
+                  placeholder="태그를 입력하세요"
+                  onKeyUp={props.onKeyUp}
+                />
+              </div>
               <S.InputWrapper>
                 <S.Label>주소</S.Label>
                 <S.ZipcodeWrapper>

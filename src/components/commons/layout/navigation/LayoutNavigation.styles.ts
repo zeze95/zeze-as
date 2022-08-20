@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
-
+interface IActive {
+  isActive?: boolean;
+}
 export const Wrapper = styled.div`
-  height: 50px;
   width: 100%;
-  background-color: #dff2fc;
+  height: 60px;
+  background-color: #b2c8df;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -22,16 +24,19 @@ export const MapDiv = styled.div``;
 
 export const MenuBtn = styled.div`
   width: 100px;
-  height: 35px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  border: 1px solid white;
-  background-color: #a0d2f2;
-
+  border: 1px solid #f8f9d7;
+  background-color: ${(props: IActive) =>
+    props.isActive ? "#001D6E" : "#C4DDFF"};
+  color: ${(props: IActive) => (props.isActive ? "#ffffff" : "")};
+  cursor: pointer;
   :hover {
-    color: #9f8ecd;
-    border: 1px solid white;
+    color: #ffffff;
+    border: 1px solid #001d6e;
+    background-color: #001d6e;
   }
 `;
