@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
 
 export const Searchbar = styled.div`
-  width: 400px;
+  width: 20vw;
   height: 50px;
   border-radius: 10px;
   background-color: #dff2fc;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 10px 10px;
+  margin: 10px 0px 10px auto;
 `;
 
 export const SearchbarInput = styled.input`
@@ -17,4 +17,5 @@ export const SearchbarInput = styled.input`
   border: none;
   outline: none;
   background: none;
+  padding-left: 20px;
 `;

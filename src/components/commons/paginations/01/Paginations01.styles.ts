@@ -9,7 +9,12 @@ interface IPageProps {
 }
 export const Page = styled.span`
   margin: 0px 10px;
-  color: ${(props: IPageProps) => (props.isActive ? "purple" : "black")};
+  font-size: ${(props: IPageProps) => (props.isActive ? "18px" : "14px")};
+  color: ${(props: IPageProps) => (props.isActive ? "#6e85b7" : "black")};
   font-weight: ${(props: IPageProps) => (props.isActive ? "bold" : "normal")};
   cursor: ${(props: IPageProps) => (props.isActive ? "none" : "pointer")};
+`;
+
+export const Wrapper = styled.div`
+  margin-right: auto;
 `;

@@ -11,11 +11,6 @@ import { v4 as uuidv4 } from "uuid";
 export default function BoardListUI(props: IBoardListUIProps) {
   return (
     <S.Wrapper>
-      <Searchbar
-        refetch={props.refetch}
-        refetchBoardsCount={props.refetchBoardsCount}
-        onChangeKeyword={props.onChangeKeyword}
-      />
       <S.TableLine />
       <S.Team>
         <S.HeaderFixTen>글번호</S.HeaderFixTen>
@@ -23,7 +18,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
         <S.HeaderFixName>작성자</S.HeaderFixName>
         <S.HeaderFixTen>날짜</S.HeaderFixTen>
       </S.Team>
-      {props.data?.fetchBoards.map((el) => (
+      {props.data?.fetchBoards.map((el: any) => (
         <S.Team key={el._id}>
           <S.FixTen>
             {/* {String(el._id).slice(-4).toUpperCase()} */}
@@ -33,7 +28,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
             {el.title
               .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
               .split("@#$%")
-              .map((el) => (
+              .map((el: any) => (
                 <S.SearchTitle key={uuidv4()} isMatched={props.keyword === el}>
                   {el}
                 </S.SearchTitle>
@@ -47,7 +42,11 @@ export default function BoardListUI(props: IBoardListUIProps) {
       <S.TableBottom />
       <S.Footer>
         <Paginations01 refetch={props.refetch} count={props.count} />
-
+        <Searchbar
+          refetch={props.refetch}
+          refetchBoardsCount={props.refetchBoardsCount}
+          onChangeKeyword={props.onChangeKeyword}
+        />
         <S.Button onClick={props.onClickMoveToBoardNew}>
           게시물 등록하기
         </S.Button>

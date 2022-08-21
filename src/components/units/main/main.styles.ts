@@ -11,14 +11,6 @@ export const Wrapper = styled.div`
   gap: 1rem;
 `;
 
-// export const Markets = styled.div`
-//   width: 100%;
-//   height: auto;
-//   font-size: 30px;
-//   display: flex;
-//   flex-direction: row;
-// `;
-
 export const HeaderTitle = styled.div`
   width: 100%;
   height: 50px;
@@ -77,16 +69,18 @@ export const ItemTextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   gap: 5px;
 `;
 
 export const UserWrapper = styled.div`
   width: 100%;
-  height: 20px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   /* font-size: 0.6rem; */
+  overflow: hidden;
 `;
 
 export const ItemTitle = styled.div`
@@ -97,9 +91,9 @@ export const ItemTitle = styled.div`
 `;
 
 export const UserName = styled.div`
-  /* width: 60%; */
-  height: 20px;
+  width: 60%;
   font-size: 16px;
+  overflow: hidden;
 `;
 export const AtTime = styled.div`
   /* width: 100%; */
@@ -107,6 +101,7 @@ export const AtTime = styled.div`
   font-size: 10px;
   font-weight: 400;
   margin-left: auto;
+  overflow: hidden;
 `;
 export const Contents = styled.div`
   width: 100%;

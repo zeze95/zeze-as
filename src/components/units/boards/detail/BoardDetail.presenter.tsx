@@ -2,34 +2,35 @@ import { getDate } from "../../../../commons/libraries/utils";
 import * as S from "./BoardDetail.styles";
 import { IBoardDetailUI } from "./BoardDetail.type";
 import { Tooltip } from "antd";
+import Dompurify from "dompurify";
+import ShareButton from "../../../commons/buttons/share";
 
 export default function BoardDetailUI(props: IBoardDetailUI) {
   return (
     <S.Wrapper>
       <S.MainWrapper>
         <S.Header>
+          <S.ProfileImg src="/images/profile.png" />
           <S.ProfileBox>
-            <S.ProfileImg src="/images/profile.png" />
+            <S.Title>{props.data?.fetchBoard?.title}</S.Title>
             <S.ProfileText>
-              <S.Writer>{props.data?.fetchBoard?.writer}</S.Writer>
+              <S.Writer> 작성자 : {props.data?.fetchBoard?.writer}</S.Writer>
               <S.CreatedAt>
-                {getDate(props.data?.fetchBoard?.createdAt)}
+                작성일: {getDate(props.data?.fetchBoard?.createdAt)}
               </S.CreatedAt>
             </S.ProfileText>
-            <S.LinkWrapper>
-              <S.LinkIcon src="/images/board/link.png"></S.LinkIcon>
-              <Tooltip
-                placement="topRight"
-                title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
-              >
-                <S.LinkIcon src="/images/board/map.png" />
-              </Tooltip>
-            </S.LinkWrapper>
           </S.ProfileBox>
+          <ShareButton />
         </S.Header>
+
         <S.Body>
-          <S.Title>{props.data?.fetchBoard?.title}</S.Title>
-          <S.Contents>{props.data?.fetchBoard?.contents}</S.Contents>
+          {typeof window !== "undefined" && (
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: Dompurify.sanitize(props.data?.fetchBoard?.contents),
+              }}
+            />
+          )}
           {props.data?.fetchBoard.images
             ?.filter((el: string) => el)
             .map((el: string) => (

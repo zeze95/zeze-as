@@ -2,12 +2,13 @@ import styled from "@emotion/styled";
 import { ISearchTitle } from "./BoardList.type";
 
 export const Wrapper = styled.div`
-  width: 1200px;
-  margin: 0px;
+  width: 100%;
+  margin: 20px 0px;
 `;
 
 export const TableLine = styled.div`
   border-top: 2px solid gray;
+  margin-top: 10px;
 `;
 
 export const TableBottom = styled.div`
@@ -19,7 +20,7 @@ export const Team = styled.div`
   flex-direction: row;
   height: 52px;
   line-height: 52px;
-  border-bottom: 1px solid #009dda;
+  border-bottom: 1px solid #6e85b7;
 
   :hover {
     color: red;
@@ -65,26 +66,27 @@ export const TitleList = styled.div`
 export const Footer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding-top: 50px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 20px;
   margin: 0px 10px;
+  gap: 2rem;
 `;
 
 export const Button = styled.button`
-  width: 171px;
-  height: 52px;
-  background-color: #dffefc;
+  width: 170px;
+  height: 50px;
+  background-color: #dff2fc;
   border-radius: 15px;
-
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-
+  border: 1px solid #dff2fc;
   cursor: pointer;
   border-color: silver;
   :hover {
-    background-color: #a0d2f2;
+    background-color: #6e85b7;
   }
 `;
 

@@ -1,8 +1,6 @@
-import { useRouter } from "next/router";
 import LinkPageUI from "./link.presenter";
-import { MouseEvent } from "react";
+
 export default function LinkPage() {
-  const router = useRouter();
   const nation = [
     {
       name: "코레일",
@@ -79,8 +77,5 @@ export default function LinkPage() {
     },
   ];
 
-  const onClickMenu = (event: MouseEvent<HTMLDivElement>) => {};
-  return (
-    <LinkPageUI nation={nation} booking={booking} onClickMenu={onClickMenu} />
-  );
+  return <LinkPageUI nation={nation} booking={booking} />;
 }

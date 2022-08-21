@@ -1,9 +1,9 @@
-import { Page } from "./Paginations01.styles";
+import { Page, Wrapper } from "./Paginations01.styles";
 import { IPaginations01UIProps } from "./Paginations01.types";
 
 export default function Paginations01UI(props: IPaginations01UIProps) {
   return (
-    <div>
+    <Wrapper>
       <Page onClick={props.onClickPrevPage}>{`<`}</Page>
       {new Array(10).fill(1).map(
         (_, index) =>
@@ -19,6 +19,6 @@ export default function Paginations01UI(props: IPaginations01UIProps) {
           )
       )}
       <Page onClick={props.onClickNextPage}>{`>`}</Page>
-    </div>
+    </Wrapper>
   );
 }

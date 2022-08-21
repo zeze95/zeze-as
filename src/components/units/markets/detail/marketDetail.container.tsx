@@ -36,9 +36,9 @@ export default function MarketsDetail() {
         },
       });
       router.push("/");
-      alert("구매완료");
+      Modal.success({ content: "구매 완료" });
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: `구매하실수 없습니다. ${error.message}` });
     }
   };
 
@@ -55,21 +55,25 @@ export default function MarketsDetail() {
         refetchQueries: [{ query: FETCH_USED_ITEM }],
       });
       router.push(`/markets`);
-      alert("삭제완료");
+      Modal.success({ content: "삭제가 완료되었습니다." });
     } catch (error) {
-      console.log(error);
+      Modal.error({ content: error.message });
     }
   };
   const onClickPick = async () => {
-    await toggleUseditemPick({
-      variables: { useditemId: router.query._id },
-      refetchQueries: [
-        {
-          query: FETCH_USED_ITEM,
-          variables: { useditemId: router.query._id },
-        },
-      ],
-    });
+    try {
+      await toggleUseditemPick({
+        variables: { useditemId: router.query._id },
+        refetchQueries: [
+          {
+            query: FETCH_USED_ITEM,
+            variables: { useditemId: router.query._id },
+          },
+        ],
+      });
+    } catch (error) {
+      Modal.error({ content: "로그인 후 찜 할 수 있습니다." });
+    }
   };
 
   const onClickBasket = (item: any) => () => {

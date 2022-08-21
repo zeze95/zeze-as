@@ -31,7 +31,7 @@ export default function MainboardUI(props) {
               {typeof window !== "undefined" && (
                 <Board.Contents
                   dangerouslySetInnerHTML={{
-                    __html: Dompurify.sanitize(el.contents.slice(0, 100)),
+                    __html: Dompurify.sanitize(el.contents.slice(0, 40)),
                   }}
                 />
               )}

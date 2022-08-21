@@ -11,14 +11,14 @@ export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* box-shadow: 0px 0px 10px gray; */
+  gap: 1rem;
 `;
 
 export const Header = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   border-bottom: 1px solid #bdbdbd;
   padding-bottom: 20px;
@@ -27,25 +27,27 @@ export const Header = styled.div`
 export const ProfileBox = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 `;
 
 export const ProfileImg = styled.img`
+  width: 60px;
   margin-right: 10px;
 `;
 
 export const ProfileText = styled.div`
-  width: 20%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
+  gap: 1rem;
 `;
 
 export const LinkWrapper = styled.div`
+  width: 10%;
   display: flex;
   margin-left: auto;
   align-items: center;
-  width: 100px;
 `;
 
 export const LinkIcon = styled.img`
@@ -60,10 +62,14 @@ export const CreatedAt = styled.div``;
 export const Body = styled.div`
   width: 100%;
   min-height: 500px;
+  gap: 1rem;
 `;
 
-export const Title = styled.h1`
-  padding-top: 80px;
+export const Title = styled.div`
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-weight: 800;
 `;
 
 export const Contents = styled.div`
@@ -73,6 +79,7 @@ export const Contents = styled.div`
 
 export const UploadImg = styled.img`
   width: 100%;
+  margin: 10px 0;
 `;
 
 export const BottomWrapper = styled.div`
@@ -82,6 +89,7 @@ export const BottomWrapper = styled.div`
   padding-top: 80px;
   padding-bottom: 80px;
   border-bottom: 1px solid #bdbdbd;
+  gap: 2rem;
 `;
 export const IconWrapper = styled.div`
   width: 150px;
@@ -112,22 +120,17 @@ export const IconCount = styled.div`
 `;
 
 export const Button = styled.button`
-  width: 179px;
+  width: 150px;
   height: 45px;
-  background-color: #009dda;
-  border: 1px solid gray;
+  background-color: #7ecef4;
+  border: 1px solid #f8f9d7;
   border-radius: 10px;
-  margin: 0px 12px;
   cursor: pointer;
-
   :hover {
-    background-color: gold;
-    border-color: white;
+    background-color: #f8f9d7;
   }
 `;
 
 import ReactPlayer from "react-player";
 
-export const Youtube = styled(ReactPlayer)`
-  margin: auto;
-`;
+export const Youtube = styled(ReactPlayer)``;

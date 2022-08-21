@@ -16,7 +16,7 @@ export default function LinkPageUI(props) {
       <L.HighLighting />
       <L.booking>
         {props.booking.map((el: any) => (
-          <L.NationItem key={el.page}>
+          <L.NationItem key={el.page} href={el.page}>
             {el.image ? <L.Back src={el.image} /> : <div>{el.name}</div>}
           </L.NationItem>
         ))}

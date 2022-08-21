@@ -15,12 +15,14 @@ export const Wrapper = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  background-color: #ffffff;
 `;
 
 export const TypeBtn = styled.div`
@@ -46,18 +48,15 @@ export const ListDiv = styled.div`
   border-bottom: 1px solid black;
 `;
 
-export const ImgWrapper = styled.div`
-  width: 20%;
-`;
 export const TitleImg = styled.img`
-  width: 100%;
+  width: 20%;
   height: 100%;
 `;
 
 export const TitleBox = styled.div`
   width: 60%;
   height: 100%;
-  margin-left: 20px;
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -68,7 +67,7 @@ export const Title = styled.div`
   font-weight: 700;
   font-size: 24px;
   line-height: 36px;
-  border-bottom: 1px solid blue;
+  /* border-bottom: 1px solid #6e85b7; */
 `;
 
 export const SubTitle = styled.div`
@@ -77,7 +76,6 @@ export const SubTitle = styled.div`
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: blue;
 `;
 export const TagTitle = styled.div`
   width: 100%;
@@ -89,15 +87,15 @@ export const TagTitle = styled.div`
 `;
 
 export const RWrapper = styled.div`
-  width: 20%;
-  height: 50%;
+  width: 100%;
+  height: 30%;
   font-weight: 600;
   font-size: 20px;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid skyblue;
-  margin: auto;
+  align-items: center; */
+  /* border-bottom: 5px double #6e85b7; */
+  /* margin: auto; */
 `;
 
 export const PriceBox = styled.div``;
@@ -127,8 +125,13 @@ export const SideBox = styled.div`
 `;
 
 export const SellerWrapper = styled.div`
+  width: 20%;
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 `;
 
 export const SellerImg = styled.img`

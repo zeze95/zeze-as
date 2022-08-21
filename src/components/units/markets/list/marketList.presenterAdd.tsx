@@ -1,38 +1,26 @@
 import * as S from "./marketList.styles";
 
 export default function MarketListUIAdd(props) {
-  console.log(props.el);
   return (
-    <S.ListDiv>
-      <S.ImgWrapper>
-        {props.el?.images[0] && (
-          <S.TitleImg
-            src={`https://storage.googleapis.com/${props.el?.images[0]}`}
-          ></S.TitleImg>
-        )}
-        {!props.el?.images[0] && props.el?.images[1] && (
-          <S.TitleImg
-            src={`https://storage.googleapis.com/${props.el?.images[1]}`}
-          ></S.TitleImg>
-        )}
-        {!props.el?.images[0] && !props.el?.images[1] && (
-          <S.TitleImg
-            src={"/camp/day-night/animat-day-night-color.gif"}
-          ></S.TitleImg>
-        )}
-      </S.ImgWrapper>
+    <S.ListDiv onClick={props.onClickMoveToMarketDetail}>
+      <S.TitleImg
+        onError={event => {
+          if (event.target instanceof HTMLImageElement)
+            event.target.src = "/error.png";
+        }}
+        src={`https://storage.googleapis.com/${props.el?.images[0]}`}
+      ></S.TitleImg>
       <S.TitleBox>
-        <S.Title id={props.el?._id} onClick={props.onClickMoveToMarketDetail}>
-          {props.el?.name}
-        </S.Title>
-        <S.SubTitle>{props.el?.remarks}</S.SubTitle>
+        <S.Title id={props.el?._id}>제목: {props.el?.name}</S.Title>
+        <S.SubTitle>상품 요약:{props.el?.remarks}</S.SubTitle>
         <S.TagTitle>{props.el?.tag}</S.TagTitle>
-        <S.SellerWrapper>
-          <S.SellerImg src="/images/profile.png" />
-          <S.SellerName>{props.el?.seller.name}</S.SellerName>
-        </S.SellerWrapper>
+        <S.RWrapper>가격: {props.el?.price.toLocaleString()}원</S.RWrapper>
       </S.TitleBox>
-      <S.RWrapper>{props.el?.price.toLocaleString()}원</S.RWrapper>
+      <S.SellerWrapper>
+        판매자 정보
+        <S.SellerImg src="/images/profile.png" />
+        <S.SellerName>{props.el?.seller.name}</S.SellerName>
+      </S.SellerWrapper>
     </S.ListDiv>
   );
 }
