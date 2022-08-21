@@ -24,14 +24,14 @@ export const MapDiv = styled.div``;
 
 export const MenuBtn = styled.div`
   width: 100px;
-  height: 40px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid #f8f9d7;
   background-color: ${(props: IActive) =>
-    props.isActive ? "#001D6E" : "#C4DDFF"};
+    props.isActive ? "#c4d7e0" : "#C4DDFF"};
   color: ${(props: IActive) => (props.isActive ? "#ffffff" : "")};
   cursor: pointer;
   :hover {

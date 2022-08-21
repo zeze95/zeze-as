@@ -15,8 +15,9 @@ const Body = styled.div`
   width: 1200px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 1.4rem 0;
+  margin: 1.4rem auto;
 `;
 const Landing = styled.div`
   width: 100vw;
@@ -26,19 +27,8 @@ const Landing = styled.div`
   align-items: center;
 `;
 
-const FlexBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
 const HIDDENT_Layout = ["/"];
 const SHOW_BANNER = ["/main"];
-// const HIDDENT_Layout = [
-//   "/12-05-modal-refactoring",
-//   // ...주소 이름
-//   // ... 주소이름
-//   // ... 주소이름
-// ];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
@@ -46,18 +36,13 @@ export default function Layout(props: ILayoutProps) {
   const hidden_Layout = HIDDENT_Layout.includes(router.asPath);
   const show_banner = SHOW_BANNER.includes(router.asPath);
   return (
-    <div>
+    <>
       {!hidden_Layout ? (
         <>
           <LayoutHeader />
           {show_banner && <LayoutBanner />}
-
           <LayoutNavigation />
-          <FlexBox>
-            <LayoutSide />
-            <Body>{props.children}</Body>
-          </FlexBox>
-
+          <Body>{props.children}</Body>
           <LayoutFooter />
         </>
       ) : (
@@ -65,6 +50,6 @@ export default function Layout(props: ILayoutProps) {
           <Landing>{props.children}</Landing>
         </>
       )}
-    </div>
+    </>
   );
 }

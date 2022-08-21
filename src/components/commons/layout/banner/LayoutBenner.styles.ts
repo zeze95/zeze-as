@@ -6,7 +6,7 @@ import Slider from "react-slick";
 export const Wrapper = styled.div`
   width: 100%;
   height: 400px;
-  background-image: linear-gradient(to bottom, #6e85b7, #dff2fc);
+  background-image: linear-gradient(to bottom, #a0d2f2, #a0d2f2);
   display: flex;
   flex-direction: row;
 `;

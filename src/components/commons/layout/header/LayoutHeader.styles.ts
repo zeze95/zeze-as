@@ -1,18 +1,20 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
+  width: 100%;
   height: 50px;
-  background-image: linear-gradient(to right, #6e85b7, #c4d7e0);
+  /* background-image: linear-gradient(to right, #6e85b7, #c4d7e0); */
+  background-color: #6e85b7;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  border-bottom: 2px solid #a0d2f2;
+  border-bottom: 1px solid black;
 `;
 
 export const MarginBox = styled.div`
-  width: 250px;
+  width: 280px;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -34,13 +36,13 @@ export const LogoImg = styled.img`
 `;
 
 export const HeaderImg = styled.img`
-  width: 40px;
-  height: 60px;
+  width: 35px;
+  height: 35px;
 `;
 
 export const Btn = styled.span`
-  width: 110px;
-  height: 40px;
+  width: 100px;
+  height: 30px;
   background-color: #f8f9d7;
   border-radius: 10px;
   display: flex;
@@ -48,7 +50,7 @@ export const Btn = styled.span`
   justify-content: center;
   border: 1px solid #7ecef4;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   padding-left: 5px;
 `;
 

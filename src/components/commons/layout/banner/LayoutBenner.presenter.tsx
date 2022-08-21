@@ -16,8 +16,11 @@ export default function LayoutBannerUI(props) {
         <S.SliderDiv>
           <S.SliderImg src="/banner/004.png" />
         </S.SliderDiv>
-        <S.SliderDiv>
+        {/* <S.SliderDiv>
           <S.SliderImg src="/banner/005.png" />
+        </S.SliderDiv> */}
+        <S.SliderDiv>
+          <S.SliderImg src="/banner/006.png" />
         </S.SliderDiv>
       </S.MySlider>
     </S.Wrapper>
