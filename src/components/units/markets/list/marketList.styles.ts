@@ -104,19 +104,19 @@ export const PriceBox = styled.div``;
 
 export const Button = styled.button`
   width: 171px;
-  height: 52px;
-  background-color: #dffefc;
+  height: 50px;
+  background-color: #b2c8df;
   border-radius: 15px;
-
+  border: none;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-
+  margin-left: auto;
+  font-size: 20px;
   cursor: pointer;
-  border-color: silver;
   :hover {
-    background-color: #a0d2f2;
+    background-color: #6e85b7;
   }
 `;
 

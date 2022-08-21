@@ -17,5 +17,4 @@ export const SearchbarInput = styled.input`
   border: none;
   outline: none;
   background: none;
-  padding-left: 20px;
 `;

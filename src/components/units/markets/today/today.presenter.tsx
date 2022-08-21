@@ -8,7 +8,10 @@ export default function TodayUI(props) {
         <Today.Items key={today._id}>
           {today.images[0] ? (
             <Today.TodayImg
-              // onError={props.onError}
+              onError={event => {
+                if (event.target instanceof HTMLImageElement)
+                  event.target.src = "/error.png";
+              }}
               src={`https://storage.googleapis.com/${today.images[0]}`}
             />
           ) : (

@@ -6,9 +6,11 @@ import { useState } from "react";
 
 export default function MarketList() {
   const router = useRouter();
-  const { data, refetch, fetchMore } = useQuery(FETCH_USED_ITEMS);
-
+  // const [isSoldout, setIsSoldout] = useState<boolean | string>(true);
   const [keyword, setKeyword] = useState("");
+  const { data, refetch, fetchMore } = useQuery(FETCH_USED_ITEMS, {
+    variables: { search: keyword },
+  });
 
   const onChangeKeyword = (value: string) => {
     setKeyword(value);
@@ -17,7 +19,10 @@ export default function MarketList() {
   const onClcikWrite = () => {
     router.push(`/markets/new`);
   };
-
+  // const onClickSoldOut = (event: string) => {
+  //   setIsSoldout(event);
+  //   refetch({ search: keyword, isSoldout });
+  // };
   const ToloadFunc = () => {
     if (!data) return;
 
@@ -46,6 +51,7 @@ export default function MarketList() {
       onChangeKeyword={onChangeKeyword}
       onClcikWrite={onClcikWrite}
       ToloadFunc={ToloadFunc}
+      // onClickSoldOut={onClickSoldOut}
     />
   );
 }

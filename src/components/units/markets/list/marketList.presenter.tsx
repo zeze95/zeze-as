@@ -10,8 +10,12 @@ export default function MarketListUI(props) {
       <S.FlexBox>
         <S.Wrapper>
           <S.Header>
-            <S.TypeBtn>판매중인 상품</S.TypeBtn>
-            <S.TypeBtn>판매된 상품</S.TypeBtn>
+            {/* <S.TypeBtn onClick={props.onClickSoldOut(false)}>
+              판매중인 상품
+            </S.TypeBtn>
+            <S.TypeBtn onClick={props.onClickSoldOut(true)}>
+              판매된 상품
+            </S.TypeBtn> */}
             <Searchbar
               refetch={props.refetch}
               onChangeKeyword={props.onChangeKeyword}

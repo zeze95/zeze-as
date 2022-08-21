@@ -24,7 +24,7 @@ export default function LandingPageUI(props) {
           </Landing.Layer1>
           <Landing.Layer2 speed={1} offset={1}>
             <Landing.LayerImg src="/landing/board.png" />
-            <Landing.TextBox onClick={props.onClickMoveToPage("/board")}>
+            <Landing.TextBox onClick={props.onClickMoveToPage("/boards")}>
               접속하기
             </Landing.TextBox>
           </Landing.Layer2>

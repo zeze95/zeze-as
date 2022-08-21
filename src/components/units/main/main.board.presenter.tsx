@@ -22,23 +22,23 @@ export default function MainboardUI(props) {
               src={`https://storage.googleapis.com/${el.images[0]}`}
             />
             <Board.ItemTextWrapper>
-              <div>{el.title}</div>
+              <Board.ItemTitle>{el.title}</Board.ItemTitle>
               <Board.UserWrapper>
-                <div>{getDate(el.createdAt)}</div>
-                <div>{el.writer}</div>
+                <Board.UserName>작성자: {el.writer}</Board.UserName>
+                <Board.AtTime>{getDate(el.createdAt)}</Board.AtTime>
               </Board.UserWrapper>
 
               {typeof window !== "undefined" && (
-                <div
+                <Board.Contents
                   dangerouslySetInnerHTML={{
-                    __html: Dompurify.sanitize(el.contents.slice(0, 20)),
+                    __html: Dompurify.sanitize(el.contents.slice(0, 100)),
                   }}
                 />
               )}
             </Board.ItemTextWrapper>
           </Board.Item>
         ))
-        .slice(0, 9)}
+        .slice(0, 10)}
     </Board.InWrapper>
   );
 }

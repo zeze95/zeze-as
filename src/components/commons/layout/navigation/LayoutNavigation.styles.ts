@@ -31,7 +31,7 @@ export const MenuBtn = styled.div`
   border-radius: 15px;
   border: 1px solid #f8f9d7;
   background-color: ${(props: IActive) =>
-    props.isActive ? "#c4d7e0" : "#C4DDFF"};
+    props.isActive ? "#6e85b7" : "#C4DDFF"};
   color: ${(props: IActive) => (props.isActive ? "#ffffff" : "")};
   cursor: pointer;
   :hover {

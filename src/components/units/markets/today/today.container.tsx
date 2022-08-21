@@ -7,9 +7,5 @@ interface IBasketItems {
   title: string;
 }
 export default function Today(props) {
-  // const onErrorE = image => {
-  //   image.target.src = `https://storage.googleapis.com/${props.todaysItems[e].images[1]}`;
-  // };
-
   return <TodayUI todaysItems={props.todaysItems} />;
 }

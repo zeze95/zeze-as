@@ -2,12 +2,12 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 250px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #dff2fc;
+  background-color: #f8f9d7;
   padding: 40px 0;
   margin: 50px 0;
 `;
@@ -29,7 +29,6 @@ export const MenuWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-left: 5vw;
   margin-top: 20px;
 `;
 

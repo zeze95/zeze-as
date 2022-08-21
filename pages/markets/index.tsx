@@ -20,7 +20,6 @@ export default function MarketListPage() {
 
   useEffect(() => {
     const todays = JSON.parse(sessionStorage.getItem("todays") || "[]");
-
     setTodaysItems(todays);
     sessionStorage.getItem("todays");
   }, []);
@@ -28,7 +27,7 @@ export default function MarketListPage() {
   return (
     <FlexBox>
       <MarketList></MarketList>
-      {todaysItems && <Today todaysItems={todaysItems} />}
+      {/* {todaysItems && <Today todaysItems={todaysItems} />} */}
     </FlexBox>
   );
 }
