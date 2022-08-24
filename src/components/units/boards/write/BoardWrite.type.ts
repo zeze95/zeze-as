@@ -9,7 +9,7 @@ export interface IBoardWriteProps {
       contents: string;
     };
   };
-  data: any;
+  data?: any;
   //   updateBoardInput: any;
 }
 

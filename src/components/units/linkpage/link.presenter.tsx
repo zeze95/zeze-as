@@ -1,4 +1,5 @@
 import * as L from "./link.styles";
+import { ILinkPageUI } from "./link.types";
 
 export default function LinkPageUI(props: ILinkPageUI) {
   return (

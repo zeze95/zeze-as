@@ -7,7 +7,7 @@ export default function Paginations01(props: IPaginations01Props) {
   const [activedPage, setActivedPage] = useState(1);
   const lastPage = Math.ceil(props.count / 10);
 
-  const onClickPage = (event: MouseEvent<HTMLSpanElement>) => {
+  const onClickPage = (event: any) => {
     const activedPage = Number(event.target.id);
     setActivedPage(activedPage);
     props.refetch({ page: activedPage });
