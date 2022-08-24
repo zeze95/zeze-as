@@ -15,7 +15,7 @@ export interface IMarketWirteUIProps {
   data?: any;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   onClickWrite: any;
-  onChangeContets: (value: string) => void;
+  onChangeContents: (value: string) => void;
   onClickUpdate: (data: any) => void;
   isOpen: boolean;
   isEdit: boolean;

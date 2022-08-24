@@ -1,6 +1,6 @@
 import MarketList from "../../src/components/units/markets/list/marketList.container";
 
-export default function MarketListPage() {
+function MarketListPage() {
   // const [todaysItems, setTodaysItems] = useState([]);
 
   // useEffect(() => {
@@ -11,3 +11,5 @@ export default function MarketListPage() {
 
   return <MarketList></MarketList>;
 }
+
+export default MarketListPage;

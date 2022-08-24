@@ -27,7 +27,7 @@ export default function MarketWirteUI(props: IMarketWirteUIProps) {
       <S.Wrapper>
         <S.Title>{props.isEdit ? "상품 수정" : "상품 등록"}</S.Title>
         <S.WriterWrapper>
-          <form
+          <S.MyForm
             onSubmit={props.handleSubmit(
               props.isEdit ? props.onClickUpdate : props.onClickWrite
             )}
@@ -49,7 +49,7 @@ export default function MarketWirteUI(props: IMarketWirteUIProps) {
               />
               상품설명
               <ReactQuill
-                onChange={props.onChangeContets}
+                onChange={props.onChangeContents}
                 defaultValue={props.boardData?.fetchUseditem.contents}
               />
               판매가격
@@ -59,24 +59,27 @@ export default function MarketWirteUI(props: IMarketWirteUIProps) {
                 defaultValue={props.boardData?.fetchUseditem.price}
               />
               태그입력
-              <div>
-                <div>
-                  {props.tagsArr.map((el: any, index: number) => (
-                    <div key={index} onClick={props.deleteTags(index)}>
-                      {el}
-                    </div>
-                  ))}
-                </div>
-                <input
+              <S.TagWrapper>
+                {props.tagsArr.map((el: any, index: number) => (
+                  <S.TagContents key={index} onClick={props.deleteTags(index)}>
+                    {el}
+                  </S.TagContents>
+                ))}
+
+                <S.TagInput
                   type="text"
                   placeholder="태그를 입력하세요"
                   onKeyUp={props.onKeyUp}
                 />
-              </div>
-              <S.InputWrapper>
-                <S.Label>주소</S.Label>
-                <S.ZipcodeWrapper>
-                  <KakakomapPage address={props.address}></KakakomapPage>
+              </S.TagWrapper>
+            </S.InputWrapper>
+            <S.Label>주소</S.Label>
+            <S.AdresseWrapper>
+              <S.MapWrapper>
+                <KakakomapPage address={props.address}></KakakomapPage>
+              </S.MapWrapper>
+              <S.ZipcodeWrapper>
+                <S.ZipcodeHead>
                   <S.Zipcode
                     placeholder="07250"
                     readOnly
@@ -85,11 +88,11 @@ export default function MarketWirteUI(props: IMarketWirteUIProps) {
                       props.data?.boardData.boardAddress?.zipcode
                     }
                   />
-
                   <S.SearchButton onClick={props.onClickAddressSearch}>
                     우편 번호 검색
                   </S.SearchButton>
-                </S.ZipcodeWrapper>
+                </S.ZipcodeHead>
+
                 <S.Address
                   readOnly
                   value={
@@ -106,21 +109,23 @@ export default function MarketWirteUI(props: IMarketWirteUIProps) {
                     props.data?.boardData.boardAddress?.addressDetail
                   }
                 />
-              </S.InputWrapper>
-              <S.ImageWrapper>
-                <S.Label>사진첨부</S.Label>
-                {props.fileUrls.map((el, index) => (
-                  <Uploads
-                    key={uuidv4()}
-                    index={index}
-                    fileUrl={el}
-                    onChangeFileUrls={props.onChangeFileUrls}
-                  />
-                ))}
-              </S.ImageWrapper>
-              <Button01 title={props.isEdit ? "수정하기" : "등록하기"} />
-            </S.InputWrapper>
-          </form>
+              </S.ZipcodeWrapper>
+            </S.AdresseWrapper>
+            <br />
+            <br />
+            <S.Label>사진첨부</S.Label>
+            <S.ImageWrapper>
+              {props.fileUrls.map((el, index) => (
+                <Uploads
+                  key={uuidv4()}
+                  index={index}
+                  fileUrl={el}
+                  onChangeFileUrls={props.onChangeFileUrls}
+                />
+              ))}
+            </S.ImageWrapper>
+            <Button01 title={props.isEdit ? "수정하기" : "등록하기"} />
+          </S.MyForm>
         </S.WriterWrapper>
       </S.Wrapper>
     </>

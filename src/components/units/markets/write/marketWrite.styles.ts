@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../styles/media";
 interface ISubmitButtonProps {
   isActive: boolean;
 }
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   border: 1px solid black;
   margin: 100px;
   padding: 80px 102px 100px 102px;
@@ -13,7 +14,7 @@ export const Wrapper = styled.div`
   align-items: center;
   border: none;
   background-color: #dff2fc;
-  box-shadow: 0px 0px 20px #e1bae3;
+  border-radius: 15px;
 `;
 
 export const Title = styled.div`
@@ -26,21 +27,37 @@ export const WriterWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-top: 40px;
 `;
-
-export const Writer = styled.input`
-  width: 486px;
-  height: 52px;
-  padding-left: 16px;
-  border: 1px solid #009dda;
+export const MyForm = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export const Password = styled.input`
-  width: 486px;
-  height: 52px;
-  padding-left: 16px;
-  border: 1px solid #009dda;
+export const TagWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const TagContents = styled.div`
+  width: 100%;
+  height: 50px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+`;
+
+export const TagInput = styled.input`
+  width: 100%;
+  height: 50px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #7ecdf4;
+  padding-left: 10px;
 `;
 
 export const Label = styled.div`
@@ -50,72 +67,87 @@ export const Label = styled.div`
 `;
 
 export const InputWrapper = styled.div`
+  width: 50%;
   padding-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 
-export const Subject = styled.input`
-  width: 996px;
-  height: 52px;
-  padding-left: 16px;
-  border: 1px solid #009dda;
+export const AdresseWrapper = styled.div`
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
-
-export const Contents = styled.textarea`
-  width: 996px;
-  height: 480px;
-  padding-left: 16px;
-  padding: 14px;
-  border: 1px solid #009dda;
+export const MapWrapper = styled.div`
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 `;
 
 export const ZipcodeWrapper = styled.div`
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+`;
+
+export const ZipcodeHead = styled.div`
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
 `;
 
 export const Zipcode = styled.input`
-  width: 77px;
+  width: 90%;
   height: 52px;
   padding-left: 16px;
   border: 1px solid #009dda;
+  /* border-radius: 10px; */
 `;
 
-export const SearchButton = styled.button`
-  width: 124px;
+export const SearchButton = styled.div`
+  width: 120px;
   height: 52px;
   margin-left: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #a0d2f2;
   cursor: pointer;
-  color: white;
-  border: none;
+  /* color: white; */
+  /* border: 1px solid navy; */
 `;
 
 export const Address = styled.input`
-  width: 996px;
-  height: 52px;
-  margin-top: 16px;
-  padding-left: 16px;
-  border: 1px solid #009dda;
-`;
-
-export const Youtube = styled.input`
-  width: 996px;
+  width: 100%;
   height: 52px;
   padding-left: 16px;
+  border-radius: 15px;
   border: 1px solid #009dda;
 `;
 
 export const ImageWrapper = styled.div`
-  width: 996px;
-  padding-top: 40px;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const OptionWrapper = styled.div`
-  width: 996px;
+  width: 100%;
   padding-top: 40px;
 `;
 

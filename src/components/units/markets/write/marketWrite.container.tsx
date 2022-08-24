@@ -77,13 +77,8 @@ export default function MarketWrite(props: IMarketWrite) {
       Modal.error({ content: error.message });
     }
   };
-  const onChangeContets = (value: string) => {
-    console.log(value);
-
-    // register로 등록하지 않고 강제로 값을 넣어주는 기능
+  const onChangeContents = (value: string) => {
     setValue("contents", value);
-
-    // onChange 됐다고 react-hook-from에 알려주는 기능
     trigger("contets");
   };
 
@@ -114,9 +109,6 @@ export default function MarketWrite(props: IMarketWrite) {
             tags: data.tags,
             images: fileUrls,
             useditemAddress: {
-              // zipcode,
-              // address,
-              // addressDetail,
               zipcode,
               address,
               addressDetail: data.addressDetail,
@@ -128,7 +120,6 @@ export default function MarketWrite(props: IMarketWrite) {
       Modal.success({ content: "게시글이 수정되었습니다." });
       router.push(`/markets/${router.query._id}`);
     } catch (error) {
-      console.log(error.message);
       Modal.error({ content: error.message });
     }
   };
@@ -138,14 +129,13 @@ export default function MarketWrite(props: IMarketWrite) {
   };
 
   const onClickAddressSearch = () => {
-    setIsOpen(true);
+    setIsOpen(prev => !prev);
   };
 
   const onCompleteAddressSearch = (data: any) => {
     setAddress(data.address);
     setZipcode(data.zonecode);
     setIsOpen(false);
-    console.log();
   };
 
   const handleCancel = () => {
@@ -163,7 +153,7 @@ export default function MarketWrite(props: IMarketWrite) {
         formState={formState}
         handleSubmit={handleSubmit}
         onClickWrite={onClickWrite}
-        onChangeContets={onChangeContets}
+        onChangeContents={onChangeContents}
         onClickUpdate={onClickUpdate}
         isOpen={isOpen}
         isEdit={props.isEdit}

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 const Input = styled.input`
-  width: 400px;
+  width: 100%;
   height: 50px;
   margin-bottom: 30px;
   margin-top: 10px;
@@ -10,7 +10,7 @@ const Input = styled.input`
   padding-left: 10px;
 `;
 
-export default function Input02(props) {
+export default function Input02(props: any) {
   return (
     <Input
       type={props.type}

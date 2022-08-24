@@ -70,10 +70,7 @@ export default function KakakomapPage(props) {
   }, [props.address]);
   return (
     <MapWrapper>
-      <div
-        id="map"
-        style={{ width: 1100, height: 500, backgroundColor: "red" }}
-      ></div>
+      <div id="map" style={{ width: 1100, height: 500 }}></div>
     </MapWrapper>
   );
 }

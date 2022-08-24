@@ -50,6 +50,7 @@ export const UserInput = styled.input`
   border: 1px solid #009dda;
   background-color: #ffffff;
   border: 1px solid #b2c8df;
+  padding-left: 10px;
 `;
 
 export const ContentsWrapper = styled.div`
@@ -66,6 +67,7 @@ export const Contents = styled.textarea`
   height: 100%;
   background-color: #ffffff;
   border: 1px solid #b2c8df;
+  padding-left: 10px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
