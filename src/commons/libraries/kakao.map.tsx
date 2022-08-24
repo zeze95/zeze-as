@@ -1,9 +1,19 @@
 import { useEffect } from "react";
-
+import styled from "@emotion/styled";
+import { breakPoints } from "../../../styles/media";
 declare const window: typeof globalThis & {
   kakao: any;
 };
-
+const MapWrapper = styled.div`
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  @media ${breakPoints.mobile} {
+    height: 300px;
+  }
+`;
 export default function KakakomapPage(props) {
   useEffect(() => {
     const script = document.createElement("script");
@@ -59,11 +69,11 @@ export default function KakakomapPage(props) {
     // div에 지도를 그려줘
   }, [props.address]);
   return (
-    <div>
+    <MapWrapper>
       <div
         id="map"
-        style={{ width: 500, height: 400, backgroundColor: "red" }}
+        style={{ width: 1100, height: 500, backgroundColor: "red" }}
       ></div>
-    </div>
+    </MapWrapper>
   );
 }

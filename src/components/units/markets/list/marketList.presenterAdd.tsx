@@ -1,8 +1,9 @@
 import * as S from "./marketList.styles";
+import { IMarketListUIAdd } from "./marketList.types";
 
-export default function MarketListUIAdd(props) {
+export default function MarketListUIAdd(props: IMarketListUIAdd) {
   return (
-    <S.ListDiv onClick={props.onClickMoveToMarketDetail}>
+    <S.ListDiv onClick={props.onClickMoveToPage(`/markets/${props.el._id}`)}>
       <S.TitleImg
         onError={event => {
           if (event.target instanceof HTMLImageElement)

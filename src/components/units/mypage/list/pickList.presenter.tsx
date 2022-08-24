@@ -1,21 +1,34 @@
-import * as S from "./myPageList.stlyes";
+import { getDate } from "../../../../commons/libraries/utils";
+import * as Pick from "./myPageList.stlyes";
 
-export default function PicklistPageUI(props) {
+interface IPicklistPageUI {
+  data: any;
+  onClickMoveToPick: (Item: any) => void;
+}
+
+export default function PicklistPageUI(props: IPicklistPageUI) {
   return (
     <>
-      {props.data?.fetchUseditemsIPicked.map((el) => (
-        <S.Wrapper key={el.id}>
-          <S.Name onClick={props.onClickMoveToPick}>{el._id}</S.Name>
-          <S.Price></S.Price>
-        </S.Wrapper>
-      ))}
-
-      <S.Name>장바구니 수량 {props.basketItems.length}</S.Name>
-      {props.basket.map((el) => (
-        <>
-          <S.Name key={el.id}>아이디 {el._id}</S.Name>
-          <S.Name>제목: {el.name}</S.Name>
-        </>
+      <Pick.Header> 나의 찜 목록 </Pick.Header>
+      <Pick.HeaderWrapper>
+        <Pick.HeaderName>이름</Pick.HeaderName>
+        <Pick.HeaderPrice>가격</Pick.HeaderPrice>
+        <Pick.HeaderRemarks>내용</Pick.HeaderRemarks>
+        <Pick.HeaderSeller>판매자</Pick.HeaderSeller>
+        <Pick.HeaderCreateTime>올린시간</Pick.HeaderCreateTime>
+      </Pick.HeaderWrapper>
+      {props.data?.fetchUseditemsIPicked.map((el: any) => (
+        <Pick.ItemWrapper
+          onClick={props.onClickMoveToPick}
+          key={el._id}
+          id={el._id}
+        >
+          <Pick.Name>{el.name}</Pick.Name>
+          <Pick.Price>{el.price.toLocaleString()}원</Pick.Price>
+          <Pick.Remarks>{el.remarks}</Pick.Remarks>
+          <Pick.Seller>{el.seller.name}</Pick.Seller>
+          <Pick.CreateTime>{getDate(el.createdAt)}</Pick.CreateTime>
+        </Pick.ItemWrapper>
       ))}
     </>
   );

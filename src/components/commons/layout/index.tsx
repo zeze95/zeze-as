@@ -6,6 +6,7 @@ import LayoutNavigation from "./navigation/LayoutNavigation.container";
 import LayoutSide from "./side";
 import { useRouter } from "next/router";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../styles/media";
 
 interface ILayoutProps {
   children: ReactNode;
@@ -18,13 +19,26 @@ const Body = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1.4rem auto;
+  @media (max-width: 990px) {
+    width: 100%;
+    margin: 1rem auto;
+  }
 `;
+
 const Landing = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+const MediaSticky = styled.div`
+  @media (max-width: 990px) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
 `;
 
 const HIDDENT_Layout = ["/"];
@@ -39,9 +53,11 @@ export default function Layout(props: ILayoutProps) {
     <>
       {!hidden_Layout ? (
         <>
-          <LayoutHeader />
-          {show_banner && <LayoutBanner />}
-          <LayoutNavigation />
+          <MediaSticky>
+            <LayoutHeader />
+            {show_banner && <LayoutBanner />}
+            <LayoutNavigation />
+          </MediaSticky>
           <Body>{props.children}</Body>
           <LayoutFooter />
         </>

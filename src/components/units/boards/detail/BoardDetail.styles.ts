@@ -1,17 +1,31 @@
 import styled from "@emotion/styled";
-
+import { breakPoints } from "../../../../../styles/media";
 export const Wrapper = styled.div`
-  width: 1200px;
-  margin: 100px;
+  width: 100%;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const MainWrapper = styled.div`
+  width: 98%;
   border: 1px solid black;
   padding: 80px 102px 100px 102px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  @media ${breakPoints.tablet} {
+    width: 95%;
+    padding: 50px;
+    border-radius: 10px;
+  }
+  @media ${breakPoints.mobile} {
+    width: 95%;
+    padding: 30px 40px;
+    border-radius: 10px;
+  }
 `;
 
 export const Header = styled.div`
@@ -41,13 +55,10 @@ export const ProfileText = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   gap: 1rem;
-`;
-
-export const LinkWrapper = styled.div`
-  width: 10%;
-  display: flex;
-  margin-left: auto;
-  align-items: center;
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    gap: 0rem;
+  }
 `;
 
 export const LinkIcon = styled.img`
@@ -63,6 +74,10 @@ export const Body = styled.div`
   width: 100%;
   min-height: 500px;
   gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled.div`
@@ -73,8 +88,11 @@ export const Title = styled.div`
 `;
 
 export const Contents = styled.div`
+  width: 100%;
+  height: auto;
   padding-top: 40px;
   padding-bottom: 120px;
+  word-wrap: break-word;
 `;
 
 export const UploadImg = styled.img`
@@ -88,8 +106,10 @@ export const BottomWrapper = styled.div`
   justify-content: center;
   padding-top: 80px;
   padding-bottom: 80px;
-  border-bottom: 1px solid #bdbdbd;
   gap: 2rem;
+  @media (max-width: 991px) {
+    padding: 40px;
+  }
 `;
 export const IconWrapper = styled.div`
   width: 150px;
@@ -128,6 +148,9 @@ export const Button = styled.button`
   cursor: pointer;
   :hover {
     background-color: #f8f9d7;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100px;
   }
 `;
 

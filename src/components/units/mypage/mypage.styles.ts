@@ -3,7 +3,7 @@ interface IisActive {
   isActive: boolean;
 }
 export const Wrapper = styled.div`
-  width: 1250px;
+  width: 100%;
   margin: 50px;
   display: flex;
   flex-direction: row;
@@ -11,6 +11,10 @@ export const Wrapper = styled.div`
   border: 3px solid #6e85b7;
   border-radius: 20px;
   background-color: #6e85b7;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    padding: 25px 20px;
+  }
 `;
 
 export const SideWrapper = styled.div`
@@ -19,8 +23,10 @@ export const SideWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* border: 1px solid gray; */
+  @media (max-width: 991px) {
+    width: 100%;
+    height: 210px;
+  }
 `;
 export const InfoWrapper = styled.div`
   width: 95%;
@@ -33,6 +39,13 @@ export const InfoWrapper = styled.div`
   margin-right: auto;
   margin-bottom: 10px;
   border-radius: 20px 0 0 0;
+  @media (max-width: 991px) {
+    width: 100%;
+    height: 150px;
+    margin: 0px;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+  }
 `;
 
 export const SideHeader = styled.div`
@@ -42,11 +55,19 @@ export const SideHeader = styled.div`
   font-size: 24px;
   text-align: center;
   padding: 8px;
+  @media (max-width: 991px) {
+    display: none;
+  }
 `;
 export const MyImg = styled.img`
   width: 80px;
   height: 80px;
   margin: 10px auto;
+  @media (max-width: 991px) {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
 `;
 
 export const MyName = styled.div`
@@ -57,6 +78,10 @@ export const MyName = styled.div`
   text-align: center;
   padding-top: 5px;
   margin-bottom: 20px;
+  @media (max-width: 991px) {
+    height: 40px;
+    margin-bottom: 0px;
+  }
 `;
 export const MyText = styled.div`
   width: 90%;
@@ -64,6 +89,10 @@ export const MyText = styled.div`
   text-align: center;
   border-top: 1px solid #d2d2d2;
   padding: 5px 0;
+  @media (max-width: 991px) {
+    height: 20px;
+    padding: 0;
+  }
 `;
 export const MyPoint = styled.div`
   width: 100%;
@@ -72,6 +101,10 @@ export const MyPoint = styled.div`
   font-weight: 600;
   text-align: center;
   margin-bottom: 10px;
+  @media (max-width: 991px) {
+    height: 30px;
+    margin-bottom: 0px;
+  }
 `;
 
 export const SideMenuWrapper = styled.div`
@@ -80,6 +113,11 @@ export const SideMenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 991px) {
+    height: 110px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 export const SideMenu = styled.div`
   width: 100%;
@@ -98,6 +136,12 @@ export const SideMenu = styled.div`
   border-right: none;
   border-radius: 10px 0 0 10px;
   cursor: pointer;
+  @media (max-width: 991px) {
+    width: 33%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+    border: none;
+  }
 `;
 export const SideMenuText = styled.div`
   width: 100%;
@@ -119,4 +163,9 @@ export const ListWrapeer = styled.div`
   border: 3px solid #6e85b7;
   border-radius: 0 10px 10px 0;
   background-color: #ffffff;
+  @media (max-width: 991px) {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+  }
 `;

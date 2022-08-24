@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../styles/media";
 interface IActive {
   isActive?: boolean;
 }
@@ -9,6 +10,14 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media ${breakPoints.tablet} {
+    height: 50px;
+    align-items: flex-start;
+  }
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    align-items: flex-start;
+  }
 `;
 
 export const BtnWrapper = styled.div`
@@ -18,6 +27,12 @@ export const BtnWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   margin: auto;
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 
 export const MapDiv = styled.div``;
@@ -38,5 +53,15 @@ export const MenuBtn = styled.div`
     color: #ffffff;
     border: 1px solid #001d6e;
     background-color: #001d6e;
+  }
+  @media ${breakPoints.tablet} {
+    height: 30px;
+    border-radius: 10px;
+  }
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 25px;
+    border-radius: 10px;
+    font-size: 1rem;
   }
 `;

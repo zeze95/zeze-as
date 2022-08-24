@@ -7,6 +7,7 @@ import {
   LIKE_BOARD,
   DISLIKE_BOARD,
 } from "./BoardDetail.queries";
+import { Modal } from "antd";
 
 export default function BoardDetail() {
   const router = useRouter();
@@ -40,8 +41,8 @@ export default function BoardDetail() {
         },
         refetchQueries: [{ query: FETCH_BOARD }],
       });
-      router.push(`/boards/`);
-      alert("삭제완료");
+      router.push(`/boards`);
+      Modal.success({ content: "삭제가 완료되었습니다." });
     } catch (error) {
       console.log(error);
     }

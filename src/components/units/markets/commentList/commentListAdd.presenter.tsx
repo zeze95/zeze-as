@@ -4,7 +4,9 @@ import * as S from "./commentList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
 import AnswerListUI from "./commentAnswer.container";
 
-export default function MarketCommentListUIAdd(props: any) {
+export default function MarketCommentListUIAdd(
+  props: IMarketCommentListUIItem
+) {
   return (
     <>
       {!props.isEdit && (

@@ -1,8 +1,9 @@
 import * as S from "./Login.styles";
 import Input01 from "../../commons/inputs/01";
 import Button01 from "../../../commons/buttons/01";
+import { ILoginPageUI } from "./Login.types";
 
-export default function LoginPageUI(props: any) {
+export default function LoginPageUI(props: ILoginPageUI) {
   return (
     <>
       <S.Wrapper>
@@ -10,7 +11,7 @@ export default function LoginPageUI(props: any) {
           <S.Header>Login Page</S.Header>
           <S.HighLighting />
           <S.LineDiv />
-          <form onSubmit={props.handleSubmit(props.onClickLogin)}>
+          <S.MyForm onSubmit={props.handleSubmit(props.onClickLogin)}>
             <S.InputWrapper>
               이메일
               <Input01
@@ -34,7 +35,7 @@ export default function LoginPageUI(props: any) {
               isActive={props.formState.isValid}
               title=" Sign in"
             ></Button01>
-          </form>
+          </S.MyForm>
         </S.InsideBox>
       </S.Wrapper>
     </>

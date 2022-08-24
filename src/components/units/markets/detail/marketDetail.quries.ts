@@ -18,6 +18,7 @@ export const FETCH_USED_ITEM = gql`
       }
       seller {
         name
+        email
       }
       createdAt
     }
@@ -38,6 +39,13 @@ export const FETCH_USEDITEMS_I_PICKED = gql`
 export const POINT_BUYING_AND_SELLING = gql`
   mutation createPointTransactionOfBuyingAndSelling($useritemId: ID!) {
     createPointTransactionOfBuyingAndSelling(useritemId: $useritemId) {
+      _id
+    }
+  }
+`;
+export const FETCH_USER = gql`
+  query fetchUserLoggedIn {
+    fetchUserLoggedIn {
       _id
     }
   }

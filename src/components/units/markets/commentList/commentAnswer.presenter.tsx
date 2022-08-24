@@ -14,6 +14,7 @@ import {
   IQuery,
 } from "../../../../commons/types/generated/types";
 import { IAnswerListUIItem } from "./commentList.types";
+import { Modal } from "antd";
 
 export default function AnswerListUIITEM(props: IAnswerListUIItem) {
   const { data } = useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER);
@@ -36,10 +37,10 @@ export default function AnswerListUIITEM(props: IAnswerListUIItem) {
           useditemQuestionAnswerId: props.answerEl?._id,
         },
       });
-      alert("질문을 삭제했습니다.");
+      Modal.success({ content: "질문을 삭제했습니다." });
       refetch({ useditemQuestionId: props.el?._id });
     } catch (error: any) {
-      alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
 
@@ -48,8 +49,8 @@ export default function AnswerListUIITEM(props: IAnswerListUIItem) {
       {!isAnswerEdit && (
         <S.AnswerWrapper key={props.answerEl?._id}>
           <S.UserSection>
-            <S.AnswerImg src="/images/profile.png" />{" "}
-            <S.CommentUser>{props.answerEl?.user.name}</S.CommentUser>{" "}
+            <S.AnswerImg src="/images/profile.png" />
+            <S.CommentUser>{props.answerEl?.user.name}</S.CommentUser>
             {props.answerEl.user._id === data?.fetchUserLoggedIn._id && (
               <S.BtnWrapper>
                 <S.Btn onClick={onClickUpdate}>수정</S.Btn>

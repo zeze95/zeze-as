@@ -3,8 +3,9 @@ import { getDate } from "../../../commons/libraries/utils";
 import { FETCH_USED_ITEMS } from "./main.queries";
 import * as Market from "./main.styles";
 import Dompurify from "dompurify";
+import { IMainMarketUI } from "./main.types";
 
-export default function MainMarketUI(props) {
+export default function MainMarketUI(props: IMainMarketUI) {
   const { data } = useQuery(FETCH_USED_ITEMS);
   return (
     <Market.InWrapper>
@@ -39,7 +40,7 @@ export default function MainMarketUI(props) {
             </Market.ItemTextWrapper>
           </Market.Item>
         ))
-        .slice(0, 10)}
+        .slice(0, 8)}
     </Market.InWrapper>
   );
 }

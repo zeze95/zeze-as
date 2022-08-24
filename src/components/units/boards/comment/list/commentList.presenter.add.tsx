@@ -9,8 +9,7 @@ import {
   FETCH_BOARD_COMMENTS,
 } from "./commentList.queries";
 import BoardCommentWrite from "../write/commentWrite.container";
-// props 타입
-// myPassword
+import { getDate } from "../../../../../commons/libraries/utils";
 
 export default function CommentListUIAdd(props: ICommentListUIPropsAdd) {
   const router = useRouter();
@@ -45,7 +44,7 @@ export default function CommentListUIAdd(props: ICommentListUIPropsAdd) {
   };
 
   const onClickDelete = () => {
-    setIsOpenDeleteModal((prev) => !prev);
+    setIsOpenDeleteModal(prev => !prev);
   };
 
   const onChangeDeletePassword = (event: ChangeEvent<HTMLInputElement>) => {
@@ -61,27 +60,34 @@ export default function CommentListUIAdd(props: ICommentListUIPropsAdd) {
         </Modal>
       )}
       {!isEdit && (
-        <S.Wrapper>
-          <S.FlexBox>
-            <S.ProfileDiv>
-              <S.ProfileImg src="/images/profile.png" />
-            </S.ProfileDiv>
-            <S.WriterWrapper>
-              <S.HeaderDiv>
-                <S.Align>
-                  <S.WriterName>{props.el?.writer}</S.WriterName>
-                  <Rate value={props.el?.rating} disabled />
-                </S.Align>
-                <S.IconDiv>
-                  <S.UpdateIcon id={props.el?._id} onClick={onClickUpdate} />
-                  <S.DeleteIcon id={props.el?._id} onClick={onClickDelete} />
-                </S.IconDiv>
-              </S.HeaderDiv>
-              <S.Contents>{props.el?.contents}</S.Contents>
-              <S.CreateDate>{props.el?.createdAt}</S.CreateDate>
-            </S.WriterWrapper>
-          </S.FlexBox>
-        </S.Wrapper>
+        <S.CommentWrapper>
+          <S.UserSection>
+            <S.UserImg src="/images/profile.png" />
+            <S.CommentUser>{props.el?.writer}</S.CommentUser>
+          </S.UserSection>
+          <S.LineDiv />
+          <S.ContentsSection>
+            <S.IconSection>
+              <Rate value={props.el?.rating} disabled />
+              <S.BtnWrapper>
+                <S.Btn onClick={onClickUpdate}>
+                  <S.UpdateIcon />
+                  {/**  수정 **/}
+                </S.Btn>
+                <S.Btn onClick={onClickDelete}>
+                  <S.DeleteIcon />
+                  {/**  삭제 **/}
+                </S.Btn>
+              </S.BtnWrapper>
+            </S.IconSection>
+            <S.TextSection>
+              <S.CommentContents>{props.el?.contents}</S.CommentContents>
+              <S.CommentFooter>
+                <S.CommentDate>{getDate(props.el?.createdAt)}</S.CommentDate>
+              </S.CommentFooter>
+            </S.TextSection>
+          </S.ContentsSection>
+        </S.CommentWrapper>
       )}
       {isEdit && (
         <BoardCommentWrite isEdit={true} setIsEdit={setIsEdit} el={props.el} />

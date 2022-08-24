@@ -4,7 +4,12 @@ import PointAllCharge from "./pointList/pointAllCharge.container";
 import PointBuy from "./pointList/pointBuy.container";
 import PointSell from "./pointList/pointSell.container";
 
-export default function PointPageUI(props) {
+interface IPointPageUI {
+  onClickTap: (e: any) => void;
+  isActive: string;
+}
+
+export default function PointPageUI(props: IPointPageUI) {
   return (
     <S.Wrapper>
       <S.MenuWrapper>

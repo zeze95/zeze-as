@@ -6,12 +6,15 @@ import InfiniteScroll from "react-infinite-scroller";
 // myPassword
 export default function CommentListUI(props: ICommentListUIProps) {
   return (
-    <S.Scroller>
-      <InfiniteScroll pageStart={0} loadMore={props.ToloadFunc} hasMore={true}>
+    <InfiniteScroll pageStart={0} loadMore={props.ToloadFunc} hasMore={true}>
+      <S.Wrapper>
+        <S.ListHeader>댓글 쓰기</S.ListHeader>
         {props.data?.fetchBoardComments.map((el: any) => (
-          <CommentListUIAdd key={el._id} el={el} />
+          <S.ListWrapper key={el.id} id={el.id}>
+            <CommentListUIAdd el={el} />
+          </S.ListWrapper>
         ))}
-      </InfiniteScroll>
-    </S.Scroller>
+      </S.Wrapper>
+    </InfiniteScroll>
   );
 }

@@ -3,7 +3,7 @@ import { FETCH_LOADING, FETCH_TRANSACTIONS } from "./Lists.quries";
 import PointListUI from "./point.presenter";
 import * as S from "./Lists.styles";
 
-export default function PointAllList(props) {
+export default function PointAllList() {
   const { data } = useQuery(FETCH_TRANSACTIONS);
 
   return (

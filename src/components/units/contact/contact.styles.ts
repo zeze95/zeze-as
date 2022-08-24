@@ -20,7 +20,14 @@ export const Title = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
+export const HighLighting = styled.div`
+  opacity: 0.35;
+  width: 300px;
+  height: 2em;
+  margin-top: -2.8em;
+  margin-bottom: 1em;
+  background-color: #6e85b7;
+`;
 export const FormWrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -39,6 +46,7 @@ export const UserS = styled.input`
   background-color: #ffffff;
   border: none;
   border-bottom: 1px solid #d2d2d2;
+  padding-left: 10px;
 `;
 export const UserT = styled.textarea`
   width: 100%;
@@ -46,6 +54,7 @@ export const UserT = styled.textarea`
   border-radius: 10px;
   background-color: #ffffff;
   border: 1px solid #d2d2d2;
+  padding: 10px;
 `;
 
 export const ButtonWrapper = styled.div`

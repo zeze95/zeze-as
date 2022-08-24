@@ -80,6 +80,7 @@ export default function ShareButton() {
 
   return (
     <Wrapper>
+      <KakaoIcon onClick={handleKakaoButton} src="/icons/Kakao.jpeg" />
       <FacebookShareButton url={currentUrl}>
         <Facebook round={true} />
       </FacebookShareButton>
@@ -89,7 +90,6 @@ export default function ShareButton() {
       <CopyToClipboard text={currentUrl}>
         <URLShareButton onClick={onClickURL}>URL</URLShareButton>
       </CopyToClipboard>
-      <KakaoIcon onClick={handleKakaoButton} src="/icons/Kakao.jpeg" />
     </Wrapper>
   );
 }

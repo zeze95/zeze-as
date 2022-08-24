@@ -1,15 +1,17 @@
 import * as S from "./SignUp.styles";
 import Input01 from "../../commons/inputs/01";
 import Button01 from "../../../commons/buttons/01";
+import { ISignUI } from "./SignUp.types";
 
-export default function SignUI(props) {
+export default function SignUI(props: ISignUI) {
   return (
     <>
       <S.Wrapper>
         <S.InsideBox>
           <S.Header>Sign Up Page</S.Header>
+          <S.HighLighting />
           <S.LineDiv />
-          <form onSubmit={props.handleSubmit(props.onClickSign)}>
+          <S.MyForm onSubmit={props.handleSubmit(props.onClickSign)}>
             <S.InputWrapper>
               이름
               <Input01
@@ -47,7 +49,7 @@ export default function SignUI(props) {
                 title=" Sign in"
               ></Button01>
             </S.InputWrapper>
-          </form>
+          </S.MyForm>
         </S.InsideBox>
       </S.Wrapper>
     </>

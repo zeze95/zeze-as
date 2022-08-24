@@ -11,15 +11,15 @@ import {
 import { Modal } from "antd";
 import { useMoveToPage } from "../../../commons/hooks/useMoveToPage";
 import { useRecoilState } from "recoil";
-import { accessTokenState } from "../../../../commons/store";
+import { accessTokenState, userInfoState } from "../../../../commons/store";
 
 export default function MarketsDetail() {
   const router = useRouter();
+  const userData = useRecoilState(userInfoState);
   const { data } = useQuery(FETCH_USED_ITEM, {
     variables: { useditemId: router.query._id },
   });
   const { onClickMoveToPage } = useMoveToPage();
-
   const [createPointTransactionOfBuyingAndSelling] = useMutation(
     POINT_BUYING_AND_SELLING
   );
@@ -35,8 +35,8 @@ export default function MarketsDetail() {
           useritemId: router.query._id,
         },
       });
-      router.push("/");
-      Modal.success({ content: "구매 완료" });
+      router.push("mypage");
+      Modal.success({ content: "구매 완료되었습니다." });
     } catch (error) {
       Modal.error({ content: `구매하실수 없습니다. ${error.message}` });
     }
@@ -102,6 +102,7 @@ export default function MarketsDetail() {
         onClickDelete={onClickDelete}
         onClickBasket={onClickBasket}
         accessToken={accessToken}
+        userData={userData}
       />
     </>
   );

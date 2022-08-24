@@ -7,7 +7,7 @@ import { getDate } from "../../../../commons/libraries/utils";
 import ShareButton from "../../../commons/buttons/share";
 import { LikeOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
-export default function MarketsDetailUI(props: any) {
+export default function MarketsDetailUI(props: IMarketsDetailUI) {
   return (
     <>
       <S.Wrapper>
@@ -73,11 +73,12 @@ export default function MarketsDetailUI(props: any) {
           <KakakomapPage
             address={props.data?.fetchUseditem?.useditemAddress?.address}
           />
+          <br />
           <ShareButton />
         </S.MainWrapper>
         <S.BottomWrapper>
           <S.Btn onClick={props.onClickMoveToPage("/markets")}>목록으로</S.Btn>
-          {props.accessToken ? (
+          {props.userData === props.data?.fetchUseditem.seller.email ? (
             <>
               <S.Btn
                 onClick={props.onClickMoveToPage(
@@ -96,5 +97,3 @@ export default function MarketsDetailUI(props: any) {
     </>
   );
 }
-
-// 나중에 보드랑 여기 목록 수정 삭제 버튼도 컴포넌트 화

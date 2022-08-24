@@ -22,7 +22,7 @@ import {
 import { IMarketComment } from "./commentWrite.types";
 import { Modal } from "antd";
 
-export default function MarketCommentWrite(props) {
+export default function MarketCommentWrite(props: IMarketComment) {
   const router = useRouter();
   const { data } = useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER);
   const { data: fetchQuestions, refetch: reQuestions } = useQuery<

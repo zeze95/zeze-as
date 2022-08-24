@@ -25,6 +25,7 @@ export const HeaderText = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 export const ContentWrapper = styled.div`
@@ -40,4 +41,36 @@ export const ContentText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const ItemWrapper = styled.div`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #d2d2d2;
+`;
+
+export const ItemHeader = styled.div`
+  width: 100%;
+  height: 65px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+`;
+
+export const ItemText = styled.div`
+  width: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 `;

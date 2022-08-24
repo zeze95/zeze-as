@@ -4,7 +4,7 @@ export const ListWrapper = styled.div`
   width: 100%;
   height: auto;
   margin: 0 auto;
-  background-color: #f7f7f7;
+  background-color: #daeaf1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +51,7 @@ export const Btn = styled.span`
   font-size: 14px;
   cursor: pointer;
   :hover {
-    color: gray;
+    color: navy;
   }
 `;
 
@@ -71,6 +71,7 @@ export const CommentContents = styled.div`
   width: 100%;
   min-height: 20px;
   margin: 10px 5px;
+  word-wrap: break-word;
 `;
 
 export const CommentFooter = styled.div`

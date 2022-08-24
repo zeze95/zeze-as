@@ -12,8 +12,12 @@ import { accessTokenState } from "../store";
 import { onError } from "@apollo/client/link/error";
 
 import { getAccessToken } from "../libraries/getAccessToken";
+import { ReactNode } from "react";
+interface ILayoutProps {
+  children: ReactNode;
+}
 
-export default function ApolloSetting(props) {
+export default function ApolloSetting(props: ILayoutProps) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   useEffect(() => {
     getAccessToken().then(newAccessToken => {
@@ -41,7 +45,7 @@ export default function ApolloSetting(props) {
   });
 
   const uploadLink = createUploadLink({
-    uri: "https://backend07.codebootcamp.co.kr/graphql",
+    uri: "https://backend07.codebootcamp.co.kr/graphql04",
     headers: { Authorization: `Bearer ${accessToken}` },
     credentials: "include",
   });

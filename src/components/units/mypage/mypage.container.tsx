@@ -1,15 +1,15 @@
 import MyPageUI from "./mypage.presenter";
-import { accessTokenState, userInfoState } from "../../../commons/store";
+import { userInfoState } from "../../../commons/store";
 import { useRecoilState } from "recoil";
 import { useQuery } from "@apollo/client";
-import { FETCH_USER_LOGGED_IN, FETCH_USER_PICKED } from "./mypage.queries";
+import { FETCH_USER_LOGGED_IN } from "./mypage.queries";
 import { useState } from "react";
 
 export default function MyPageContainer(props) {
   const [userInfo] = useRecoilState(userInfoState);
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
 
-  const [isActive, setIsActive] = useState<string | null>(null);
+  const [isActive, setIsActive] = useState<string>("list");
 
   // const onClickMypick = () => {
   //   setIsActive(Mypic)

@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import { FETCH_SELLING } from "./Lists.quries";
 import PointListUI from "./point.presenter";
 import * as S from "./Lists.styles";
-export default function PointSell(props) {
+export default function PointSell() {
   const { data } = useQuery(FETCH_SELLING);
   return (
     <S.Wrapper>

@@ -1,48 +1,60 @@
-import * as S from "./commentWrite.styles";
-import ICommentWriteUIProps from "./commentWrite.types";
+import * as CM from "./commentWrite.styles";
 import "antd/dist/antd.css";
 import { Rate } from "antd";
+import { IBoardCommentWriteUIProps } from "./commentWrite.types";
 
-export default function CommentWriteUI(props: ICommentWriteUIProps) {
+export default function CommentWriteUI(props: IBoardCommentWriteUIProps) {
   return (
-    <>
-      <S.Wrapper>
-        <S.TextWrapper>
-          <S.TextBox
-            placeholder="작성자"
-            onChange={props.onChangeWriter}
-            defaultValue={props.el?.writer}
-          />
-          <S.TextBox
-            type="password"
-            placeholder="비밀번호"
-            onChange={props.onChangePassword}
-          ></S.TextBox>
-          <S.RateBox>
-            <Rate
-              onChange={props.onChangeStar}
-              value={props.star}
-              tooltips={props.desc}
+    <CM.Form
+      onSubmit={
+        props.isEdit
+          ? props.handleSubmit(props.onClickUpdate)
+          : props.handleSubmit(props.onClickWrite)
+      }
+    >
+      <CM.Wrapper>
+        <CM.UserWrapper>
+          <CM.UserInputWrapper>
+            <CM.UserInput
+              type="text"
+              placeholder="작성자"
+              defaultValue={props.el?.writer}
+              {...props.register("writer")}
             />
-          </S.RateBox>
-        </S.TextWrapper>
-        <S.ContentsBox>
-          <S.Contents
-            maxLength={100}
-            onChange={props.onChangeContents}
+            <CM.UserInput
+              type="password"
+              placeholder="비밀번호"
+              {...props.register("password")}
+            ></CM.UserInput>
+            <CM.MobileBtn
+              onClick={props.isEdit ? props.onClickUpdate : props.onClickWrite}
+            >
+              {props.isEdit ? "수정" : "등록"}
+            </CM.MobileBtn>
+          </CM.UserInputWrapper>
+
+          <Rate
+            onChange={props.onChangeStar}
+            value={props.star}
+            tooltips={props.desc}
+          />
+          {props.isEdit && <div onClick={props.onClickUpdateCancle}>dd</div>}
+        </CM.UserWrapper>
+        <CM.ContentsWrapper>
+          <CM.Contents
+            {...props.register("contents")}
+            maxLength={300}
             placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."
             defaultValue={props.el?.contents}
           />
-          <S.BottomBox>
-            <S.limit>a/100</S.limit>
-            <S.Button
-              onClick={props.isEdit ? props.onClickUpdate : props.onClickWrite}
-            >
-              {props.isEdit ? "수정하기" : "등록하기"}
-            </S.Button>
-          </S.BottomBox>
-        </S.ContentsBox>
-      </S.Wrapper>
-    </>
+
+          <CM.Btn
+            onClick={props.isEdit ? props.onClickUpdate : props.onClickWrite}
+          >
+            {props.isEdit ? "수정하기" : "등록하기"}
+          </CM.Btn>
+        </CM.ContentsWrapper>
+      </CM.Wrapper>
+    </CM.Form>
   );
 }

@@ -1,9 +1,10 @@
 import PicklistPage from "./list/pickList.container";
 import * as S from "./mypage.styles";
+import { IMyPageUI } from "./mypage.types";
 import PasswordChange from "./password/password.container";
 import PointPage from "./point/point.container";
 
-export default function MyPageUI(props) {
+export default function MyPageUI(props: IMyPageUI) {
   return (
     <>
       <S.Wrapper>
@@ -26,7 +27,7 @@ export default function MyPageUI(props) {
               id="list"
             >
               <S.SideMenuText isActive={props.isActive === "list"}>
-                내 장터
+                내 장바구니
               </S.SideMenuText>
             </S.SideMenu>
             <S.SideMenu

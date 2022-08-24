@@ -12,19 +12,3 @@ export const FETCH_USER_LOGGED_IN = gql`
     }
   }
 `;
-
-export const FETCH_USER_PICKED = gql`
-  query fetchUseditemsIPicked($search: String, $page: Int) {
-    fetchUseditemsIPicked(search: $search, page: $page) {
-      _id
-      name
-      remarks
-      contents
-      price
-      tags
-      images
-      createdAt
-      updatedAt
-    }
-  }
-`;

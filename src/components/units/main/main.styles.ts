@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -9,6 +10,10 @@ export const Wrapper = styled.div`
   align-items: center;
   /* padding: 50px 0; */
   gap: 1rem;
+  @media (max-width: 991px) {
+    width: 90%;
+    gap: 0.4rem;
+  }
 `;
 
 export const HeaderTitle = styled.div`
@@ -20,6 +25,13 @@ export const HeaderTitle = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  cursor: pointer;
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+    margin-top: 20px;
+  }
 `;
 export const HighLighting = styled.div`
   opacity: 0.35;
@@ -28,6 +40,13 @@ export const HighLighting = styled.div`
   margin-top: -1.6em;
   margin-bottom: 1em;
   background-color: #6e85b7;
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    width: 300px;
+    height: 1em;
+    margin-top: -2.6em;
+  }
 `;
 
 export const InWrapper = styled.div`
@@ -50,7 +69,7 @@ export const ItemImg = styled.img`
 `;
 
 export const Item = styled.div`
-  width: 20%;
+  width: 25%;
   height: 350px;
   display: flex;
   flex-direction: column;
@@ -61,6 +80,12 @@ export const Item = styled.div`
   overflow: hidden;
   padding: 10px;
   gap: 1rem;
+  :hover {
+    transform: scale(1.1);
+  }
+  @media (max-width: 991px) {
+    width: 50%;
+  }
 `;
 export const ItemTextWrapper = styled.div`
   width: 100%;
@@ -80,20 +105,28 @@ export const UserWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   /* font-size: 0.6rem; */
-  overflow: hidden;
+  @media (max-width: 991px) {
+    height: auto;
+  }
 `;
 
 export const ItemTitle = styled.div`
   width: 100%;
-  height: 22px;
-  font-size: 20px;
+  height: auto;
+  font-size: 18px;
   font-weight: 600;
+  @media (max-width: 991px) {
+    height: auto;
+  }
 `;
 
 export const UserName = styled.div`
   width: 60%;
   font-size: 16px;
   overflow: hidden;
+  @media (max-width: 991px) {
+    height: auto;
+  }
 `;
 export const AtTime = styled.div`
   /* width: 100%; */
@@ -101,7 +134,9 @@ export const AtTime = styled.div`
   font-size: 10px;
   font-weight: 400;
   margin-left: auto;
-  overflow: hidden;
+  @media (max-width: 991px) {
+    height: auto;
+  }
 `;
 export const Contents = styled.div`
   width: 100%;

@@ -8,18 +8,19 @@ import { useRouter } from "next/router";
 import { Modal } from "antd";
 import { useEffect, useState } from "react";
 import { ChangeEvent } from "react";
+import { IMarketWrite } from "./marketWrite.types";
 
 const schema = yup.object({
   name: yup.string(),
   remarks: yup.string(),
   contents: yup.string(),
-  price: yup.number(),
+  price: yup.number().typeError("숫자만 입력 가능합니다."),
   tags: yup.string(),
 });
 
 // 상세 조건은 나중에
 
-export default function MarketWrite(props) {
+export default function MarketWrite(props: IMarketWrite) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [zipcode, setZipcode] = useState("");
@@ -52,7 +53,7 @@ export default function MarketWrite(props) {
     setTagsArr([...tagsArr]);
   };
 
-  const onClickWrite = async data => {
+  const onClickWrite = async (data: any) => {
     try {
       await createUseditem({
         variables: {
@@ -87,7 +88,7 @@ export default function MarketWrite(props) {
     trigger("contets");
   };
 
-  const onClickUpdate = async data => {
+  const onClickUpdate = async (data: any) => {
     const currentFiles = JSON.stringify(fileUrls);
     const defaultFiles = JSON.stringify(props.boardData.updateUseditem?.images);
     const isChangedFiles = currentFiles !== defaultFiles;

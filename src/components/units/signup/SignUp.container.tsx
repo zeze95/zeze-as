@@ -36,7 +36,7 @@ export default function SignUp() {
     mode: "onChange", // 검증할 시간,상황
   });
 
-  const onClickSign = async (data) => {
+  const onClickSign = async data => {
     try {
       const result = await createUser({
         variables: {
@@ -52,7 +52,6 @@ export default function SignUp() {
     } catch (error) {
       Modal.error({ content: error.message });
     }
-    console.log(data);
   };
 
   return (

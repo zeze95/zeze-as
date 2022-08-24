@@ -3,7 +3,8 @@ import { FETCH_BOARDS } from "./main.queries";
 import * as Board from "./main.styles";
 import Dompurify from "dompurify";
 import { getDate } from "../../../commons/libraries/utils";
-export default function MainboardUI(props) {
+import { IMainboardUI } from "./main.types";
+export default function MainboardUI(props: IMainboardUI) {
   const { data } = useQuery(FETCH_BOARDS);
   // console.log(data.fetchBoards);
   return (
@@ -38,7 +39,7 @@ export default function MainboardUI(props) {
             </Board.ItemTextWrapper>
           </Board.Item>
         ))
-        .slice(0, 10)}
+        .slice(0, 8)}
     </Board.InWrapper>
   );
 }

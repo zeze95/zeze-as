@@ -11,19 +11,28 @@ import { v4 as uuidv4 } from "uuid";
 export default function BoardListUI(props: IBoardListUIProps) {
   return (
     <S.Wrapper>
+      <S.Top>
+        <Searchbar
+          refetch={props.refetch}
+          refetchBoardsCount={props.refetchBoardsCount}
+          onChangeKeyword={props.onChangeKeyword}
+        />
+        <S.Button onClick={props.onClickMoveToBoardNew}>게시물 등록</S.Button>
+      </S.Top>
       <S.TableLine />
       <S.Team>
-        <S.HeaderFixTen>글번호</S.HeaderFixTen>
+        {/* <S.HeaderFixTen>글번호</S.HeaderFixTen> */}
+        <S.HeaderFixName>날짜</S.HeaderFixName>
         <S.HeaderTitle>제목</S.HeaderTitle>
         <S.HeaderFixName>작성자</S.HeaderFixName>
-        <S.HeaderFixTen>날짜</S.HeaderFixTen>
       </S.Team>
       {props.data?.fetchBoards.map((el: any) => (
         <S.Team key={el._id}>
-          <S.FixTen>
-            {/* {String(el._id).slice(-4).toUpperCase()} */}
-            {props.count}
-          </S.FixTen>
+          {/* <S.FixTen> */}
+          {/* {String(el._id).slice(-4).toUpperCase()} */}
+          {/* {`${props.count-}`} */}
+          {/* </S.FixTen> */}
+          <S.FixName>{getDate(el.createdAt)}</S.FixName>
           <S.TitleList id={el._id} onClick={props.onClickMoveToBoardDetail}>
             {el.title
               .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
@@ -35,22 +44,11 @@ export default function BoardListUI(props: IBoardListUIProps) {
               ))}
           </S.TitleList>
           <S.FixName>{el.writer}</S.FixName>
-          <S.FixTen>{getDate(el.createdAt)}</S.FixTen>
         </S.Team>
       ))}
 
       <S.TableBottom />
-      <S.Footer>
-        <Paginations01 refetch={props.refetch} count={props.count} />
-        <Searchbar
-          refetch={props.refetch}
-          refetchBoardsCount={props.refetchBoardsCount}
-          onChangeKeyword={props.onChangeKeyword}
-        />
-        <S.Button onClick={props.onClickMoveToBoardNew}>
-          게시물 등록하기
-        </S.Button>
-      </S.Footer>
+      <Paginations01 refetch={props.refetch} count={props.count} />
     </S.Wrapper>
   );
 }

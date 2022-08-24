@@ -1,6 +1,5 @@
 import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
-import { useState } from "react";
 import PasswordChangeUI from "./password.presenter";
 import { RESET_PASSWORD } from "./password.quries";
 import * as yup from "yup";
@@ -38,7 +37,6 @@ export default function PasswordChange() {
   return (
     <PasswordChangeUI
       onClickChange={onClickChange}
-      onChagePassword={onClickChange}
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}

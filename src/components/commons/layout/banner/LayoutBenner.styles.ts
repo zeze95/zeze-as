@@ -5,24 +5,23 @@ import Slider from "react-slick";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 400px;
-  background-image: linear-gradient(to bottom, #a0d2f2, #a0d2f2);
+  height: auto;
+  background-image: linear-gradient(to bottom, #a0d2f2, #b2c8df);
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 `;
 
 export const MySlider = styled(Slider)`
   width: 100%;
-  height: 400px;
-  display: flex;
+  height: auto;
 `;
 
-export const SliderDiv = styled.div`
-  height: 400px;
-  overflow: hidden;
-`;
+export const SliderDiv = styled.div``;
 
 export const SliderImg = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
 `;

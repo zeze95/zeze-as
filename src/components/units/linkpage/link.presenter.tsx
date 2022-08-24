@@ -1,6 +1,6 @@
 import * as L from "./link.styles";
 
-export default function LinkPageUI(props) {
+export default function LinkPageUI(props: ILinkPageUI) {
   return (
     <L.Wrapper>
       <L.HeaderTitle>공공 여행 사이트</L.HeaderTitle>
@@ -16,9 +16,9 @@ export default function LinkPageUI(props) {
       <L.HighLighting />
       <L.booking>
         {props.booking.map((el: any) => (
-          <L.NationItem key={el.page} href={el.page}>
+          <L.bookingItem key={el.page} href={el.page}>
             {el.image ? <L.Back src={el.image} /> : <div>{el.name}</div>}
-          </L.NationItem>
+          </L.bookingItem>
         ))}
       </L.booking>
     </L.Wrapper>

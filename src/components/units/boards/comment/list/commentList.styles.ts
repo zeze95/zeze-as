@@ -2,64 +2,34 @@ import styled from "@emotion/styled";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 
 export const Wrapper = styled.div`
-  width: 1200px;
-  height: 111px;
-  display: flex;
-  flex-direction: row;
-  margin: 10px 100px;
-  border-bottom: 1px solid #009dda;
-  align-items: center;
-`;
-
-export const FlexBox = styled.div`
-  display: flex;
-`;
-
-export const ProfileDiv = styled.div`
-  width: 50px;
-  height: 100%;
-`;
-
-export const ProfileImg = styled.img`
-  padding-top: 5px;
-  width: 40px;
-  height: 45px;
-  align-items: flex-start;
-`;
-
-export const WriterWrapper = styled.div`
-  width: 1150px;
-  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #daeaf1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 991px) {
+  }
+`;
+export const ListHeader = styled.div`
+  width: 90%;
+  font-weight: 700;
+  font-size: 24px;
+  margin: 20px;
+  padding: 10px;
+  border-bottom: 3px solid black;
 `;
 
-export const HeaderDiv = styled.div`
-  width: 1150px;
-  height: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-export const Contents = styled.div`
-  width: 1100px;
-  height: 60px;
-  font-size: 16px;
-  color: #4f4f4f;
-`;
-
-export const CreateDate = styled.div`
+export const ListWrapper = styled.div`
   width: 100%;
-  height: 100%;
-  color: #bdbdbd;
-  font-size: 12px;
-`;
-
-export const WriterName = styled.div`
-  width: 100px;
-  height: 100%;
-  font-size: 16px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
 `;
 
 export const Star = styled.div`
@@ -67,30 +37,107 @@ export const Star = styled.div`
   height: 100%;
 `;
 
-export const Align = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const IconDiv = styled.div`
-  width: 50px;
-  justify-content: flex-end;
-`;
-
 export const UpdateIcon = styled(EditOutlined)`
-  width: 25px;
-  height: 25px;
+  font-size: 14px;
   cursor: pointer;
 `;
 export const DeleteIcon = styled(DeleteOutlined)`
-  width: 24px;
-  height: 24px;
+  font-size: 14px;
   cursor: pointer;
 `;
-
-export const Scroller = styled.div``;
 
 export const Password = styled.input`
   width: 100%;
   margin-top: 10px;
+`;
+
+export const CommentWrapper = styled.div`
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  border-bottom: 1px solid #d2d2d2;
+  display: flex;
+  flex-direction: row;
+  padding: 0 3%;
+  gap: 1rem;
+`;
+export const UserSection = styled.section`
+  width: 80px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+`;
+export const LineDiv = styled.div`
+  width: 10px;
+  height: 100px;
+  border-right: 1px solid #d2d2d2;
+  margin: auto 0;
+`;
+export const ContentsSection = styled.section`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+`;
+export const IconSection = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: flex-end; */
+`;
+
+export const TextSection = styled.section`
+  width: 100%;
+  height: auto;
+`;
+
+export const UserImg = styled.img`
+  width: 50px;
+  background-color: white;
+  border-radius: 50px;
+`;
+
+export const BtnWrapper = styled.div`
+  width: auto;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1rem;
+`;
+
+export const Btn = styled.span`
+  font-size: 14px;
+  cursor: pointer;
+  :hover {
+    color: navy;
+  }
+`;
+
+export const CommentUser = styled.span`
+  font-size: 20px;
+  font-weight: 800;
+  margin-right: 20px;
+  margin-left: 20px;
+`;
+
+export const CommentDate = styled.span`
+  color: gray;
+  margin-right: 10px;
+  margin-left: auto;
+`;
+
+export const CommentContents = styled.div`
+  width: 100%;
+  height: auto;
+  min-height: 25px;
+  margin: 10px 5px;
+`;
+
+export const CommentFooter = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
 `;

@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client";
-import { basketState } from "../../../../commons/store";
-import { useRecoilState } from "recoil";
-import { useEffect } from "react";
-import { useState } from "react";
+// import { basketState } from "../../../../commons/store";
+// import { useRecoilState } from "recoil";
+// import { useEffect } from "react";
+// import { useState } from "react";
 import { useRouter } from "next/router";
 import PicklistPageUI from "./pickList.presenter";
 
@@ -19,6 +19,9 @@ const FETCH_USER_PICKED = gql`
       images
       createdAt
       updatedAt
+      seller {
+        name
+      }
     }
   }
 `;
@@ -31,25 +34,14 @@ export default function PicklistPage() {
       page: 1,
     },
   });
-  const [basketItems] = useRecoilState(basketState);
-  const [basket, setBasket] = useState([]);
-  useEffect(() => {
-    const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
-    setBasket(baskets);
-  }, []);
 
-  const onClickMoveToPick = (e) => {
-    router.push(`/markets/${e._id}`);
+  const onClickMoveToPick = (Item: any) => {
+    router.push(`/markets/${Item._id}`);
   };
 
   return (
     <>
-      <PicklistPageUI
-        data={data}
-        basketItems={basketItems}
-        basket={basket}
-        onClickMoveToPick={onClickMoveToPick}
-      />
+      <PicklistPageUI data={data} onClickMoveToPick={onClickMoveToPick} />
     </>
   );
 }

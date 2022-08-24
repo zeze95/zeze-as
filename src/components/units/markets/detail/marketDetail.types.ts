@@ -9,4 +9,5 @@ export interface IMarketsDetailUI {
   onClickDelete: () => any;
   onClickMoveToPage: (path: any) => () => void;
   accessToken: string;
+  userData: any;
 }

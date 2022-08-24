@@ -1,14 +1,15 @@
 import { ChangeEvent } from "react";
 import {
   FieldValues,
+  FormState,
   UseFormHandleSubmit,
   UseFormRegister,
 } from "react-hook-form";
 import { UseFormReturn } from "react-hook-form";
 
-export interface MyProps {
-  title: string;
-  register: UseFormReturn["register"];
+export interface IMarketWrite {
+  boardData?: any;
+  isEdit?: boolean;
 }
 
 export interface IMarketWirteUIProps {
@@ -26,6 +27,7 @@ export interface IMarketWirteUIProps {
   fileUrls: string[];
   boardData: any;
   handleCancel: any;
+  formState: FormState<FieldValues>;
   register: UseFormRegister<FieldValues>;
   zipcode?: string;
   address?: string;

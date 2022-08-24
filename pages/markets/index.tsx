@@ -16,18 +16,13 @@ const FlexBox = styled.div`
 // `;
 
 export default function MarketListPage() {
-  const [todaysItems, setTodaysItems] = useState([]);
+  // const [todaysItems, setTodaysItems] = useState([]);
 
-  useEffect(() => {
-    const todays = JSON.parse(sessionStorage.getItem("todays") || "[]");
-    setTodaysItems(todays);
-    sessionStorage.getItem("todays");
-  }, []);
+  // useEffect(() => {
+  //   const todays = JSON.parse(sessionStorage.getItem("todays") || "[]");
+  //   setTodaysItems(todays);
+  //   sessionStorage.getItem("todays");
+  // }, []);
 
-  return (
-    <FlexBox>
-      <MarketList></MarketList>
-      {/* {todaysItems && <Today todaysItems={todaysItems} />} */}
-    </FlexBox>
-  );
+  return <MarketList></MarketList>;
 }

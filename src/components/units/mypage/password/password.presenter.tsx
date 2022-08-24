@@ -1,6 +1,18 @@
 import * as S from "./password.styles";
+import {
+  FieldValues,
+  FormState,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+interface IPasswordChangeUI {
+  formState: FormState<FieldValues>;
+  register: UseFormRegister<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  onClickChange: (data: any) => Promise<void>;
+}
 
-export default function PasswordChangeUI(props) {
+export default function PasswordChangeUI(props: IPasswordChangeUI) {
   return (
     <S.Wrapper>
       <S.Header>비밀번호 변경</S.Header>

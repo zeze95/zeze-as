@@ -21,6 +21,10 @@ export const InsideWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding-left: 5vw;
+  @media (max-width: 991px) {
+    text-align: center;
+    width: 80vw;
+  }
 `;
 
 export const MenuWrapper = styled.div`
@@ -31,12 +35,18 @@ export const MenuWrapper = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 24px;
+  @media (max-width: 991px) {
+    width: 80vw;
+  }
 `;
 
 export const Title = styled.div`
   width: 100%;
   font-size: 20px;
   font-weight: 600;
+  @media (max-width: 991px) {
+    font-size: 18px;
+  }
 `;
 export const Link = styled.a`
   width: 30%;
@@ -50,9 +60,15 @@ export const Link = styled.a`
   :hover {
     color: blue;
   }
+  @media (max-width: 991px) {
+    font-size: 14px;
+  }
 `;
 export const Info = styled.div`
   width: 100%;
   font-size: 16px;
   font-weight: 500;
+  @media (max-width: 991px) {
+    font-size: 14px;
+  }
 `;

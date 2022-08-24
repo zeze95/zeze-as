@@ -1,9 +1,9 @@
 import { getDate } from "../../../../commons/libraries/utils";
 import * as S from "./BoardDetail.styles";
 import { IBoardDetailUI } from "./BoardDetail.type";
-import { Tooltip } from "antd";
 import Dompurify from "dompurify";
 import ShareButton from "../../../commons/buttons/share";
+import KakakomapPage from "../../../../commons/libraries/kakao.map";
 
 export default function BoardDetailUI(props: IBoardDetailUI) {
   return (
@@ -20,7 +20,6 @@ export default function BoardDetailUI(props: IBoardDetailUI) {
               </S.CreatedAt>
             </S.ProfileText>
           </S.ProfileBox>
-          <ShareButton />
         </S.Header>
 
         <S.Body>
@@ -39,13 +38,13 @@ export default function BoardDetailUI(props: IBoardDetailUI) {
                 src={`https://storage.googleapis.com/${el}`}
               />
             ))}
+
           {props.data?.fetchBoard.youtubeUrl && (
-            <S.Youtube
-              url={props.data?.fetchBoard.youtubeUrl}
-              width="486px"
-              height="240px"
-            />
+            <S.Youtube url={props.data?.fetchBoard.youtubeUrl} width="100%" />
           )}
+          <KakakomapPage
+            address={props.data?.fetchBoard?.boardAddress?.address}
+          />
         </S.Body>
         <S.IconWrapper>
           <S.IconBox>
@@ -63,8 +62,8 @@ export default function BoardDetailUI(props: IBoardDetailUI) {
             <S.IconCount>{props.data?.fetchBoard.dislikeCount}</S.IconCount>
           </S.IconBox>
         </S.IconWrapper>
+        <ShareButton />
       </S.MainWrapper>
-
       <S.BottomWrapper>
         <S.Button onClick={props.onClickMoveToBoardList}>목록으로</S.Button>
         <S.Button onClick={props.onClickMoveToBoardEdit}>수정하기</S.Button>

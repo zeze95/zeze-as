@@ -42,6 +42,9 @@ export const FETCH_BOUGHT = gql`
         name
         Email
       }
+      buyer {
+        name
+      }
     }
   }
 `;
@@ -50,6 +53,7 @@ export const FETCH_LOADING = gql`
   query fetchPointTransactionsOfLoading($search: String, $page: Int) {
     fetchPointTransactionsOfLoading(search: $search, page: $page) {
       _id
+      impUid
       amount
       balance
       status
@@ -66,6 +70,7 @@ export const FETCH_SELLING = gql`
       _id
       amount
       status
+      soldAt
       useditem {
         name
         price

@@ -1,25 +1,32 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1000px;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 30px 0px;
+  @media (max-width: 991px) {
+    padding: 20px 0;
+  }
 `;
 
 export const InsideBox = styled.div`
-  width: 800px;
+  width: 90%;
   /* height: 500px; */
   border: 3px solid #6e85b7;
   border-radius: 5px;
   margin: auto;
-  padding: 60px 70px;
+  padding: 60px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 991px) {
+    padding: 20px 0;
+  }
 `;
+
 export const InputWrapper = styled.div`
   width: 100%;
   height: 55%;
@@ -29,7 +36,12 @@ export const InputWrapper = styled.div`
   align-items: center;
   margin: 40px 0px;
 `;
-
+export const MyForm = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 export const Header = styled.div`
   width: 100%;
   height: 60px;
@@ -39,6 +51,9 @@ export const Header = styled.div`
   display: flex;
   justify-content: center;
   color: #001d6e;
+  @media (max-width: 990px) {
+    width: 80%;
+  }
 `;
 export const HighLighting = styled.div`
   opacity: 0.35;
@@ -49,9 +64,10 @@ export const HighLighting = styled.div`
   background-color: #6e85b7;
 `;
 export const LineDiv = styled.div`
-  width: 600px;
+  width: 80%;
   height: 20px;
-  border-top: 1px solid #6e85b7;
+  border-bottom: 1px solid #a0d2f2;
+  margin-bottom: 20px;
 `;
 export const InputDiv = styled.div`
   display: flex;

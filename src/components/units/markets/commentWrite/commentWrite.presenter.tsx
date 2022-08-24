@@ -1,14 +1,14 @@
 import * as S from "./commentWrite.styles";
 import { IMarketCommentUI } from "./commentWrite.types";
 
-export default function CommentWriteUI(props: any) {
+export default function CommentWriteUI(props: IMarketCommentUI) {
   return (
     <>
       <S.CommentWrapper>
         <S.InputWrapper>
           <S.UserName>
             {props.data
-              ? props.data?.fetchUserLoggedIn.name
+              ? `${props.data?.fetchUserLoggedIn.name} 님`
               : "로그인 후 이용 가능합니다"}
           </S.UserName>
           {!props.isEdit && !props.isAnswerEdit && (

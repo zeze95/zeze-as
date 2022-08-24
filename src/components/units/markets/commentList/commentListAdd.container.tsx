@@ -7,7 +7,7 @@ import {
   IQuery,
 } from "../../../../commons/types/generated/types";
 
-import { IMarketCommentListUIItem } from "./commentList.types";
+import { IMarketCommentListAdd } from "./commentList.types";
 import {
   DELETE_QUESTION,
   FETCH_QUESTIONS,
@@ -18,7 +18,7 @@ import {
 import { Modal } from "antd";
 import MarketCommentListUIAdd from "./commentListAdd.presenter";
 
-export default function MarketCommentListAdd(props: IMarketCommentListUIItem) {
+export default function MarketCommentListAdd(props: IMarketCommentListAdd) {
   const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
   const [isAnswer, setIsAnswer] = useState(false);
@@ -56,7 +56,9 @@ export default function MarketCommentListAdd(props: IMarketCommentListUIItem) {
     <>
       <MarketCommentListUIAdd
         isEdit={isEdit}
+        setIsEdit={setIsEdit}
         isAnswer={isAnswer}
+        setIsAnswer={setIsAnswer}
         data={data}
         onClickUpdate={onClickUpdate}
         onClickDelete={onClickDelete}

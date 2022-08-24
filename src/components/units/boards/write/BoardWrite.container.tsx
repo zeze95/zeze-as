@@ -1,5 +1,5 @@
 import BoardWriteUI from "./BoardWrite.presenter";
-import { useState, ChangeEvent, useEffect } from "react";
+import { useState, ChangeEvent } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
@@ -15,25 +15,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
 
-  // const [users, setUsers] = useState({
-  //   writer: "",
-  //   password: "",
-  //   title: "",
-  //   contents: "",
-  // });
-
-  // const onChangeInputs = (event) => {
-  //   setUsers({
-  //     ...users,
-  //     [event.target.id]: event.target.value,
-  //   });
-  //   if (event.target.value && users.password && users.title && users.contents) {
-  //     setIsActive(true);
-  //   } else {
-  //     setIsActive(false);
-  //   }
-  // };
-
   const [writer, setWriter] = useState("");
   const [password, setPassword] = useState("");
   const [title, setTitle] = useState("");
@@ -48,9 +29,7 @@ export default function BoardWrite(props: IBoardWriteProps) {
   const [passwordError, setPasswordError] = useState("");
   const [titleError, setTitleError] = useState("");
   const [contentsError, setContentsError] = useState("");
-  // const btnState = !(writer && password && title && contents )
 
-  // setState를 거서 값이 오지 않게 target 사용
   const onChangeWriter = (event: ChangeEvent<HTMLInputElement>) => {
     setWriter(event.target.value);
     if (event.target.value !== "") {
@@ -153,7 +132,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
             },
           },
         });
-        console.log(result);
         Modal.success({ content: "게시글이 등록되었습니다." });
         router.push(`/boards/${result.data.createBoard._id}`);
       } catch (error) {
@@ -161,9 +139,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
       }
     }
   };
-
-  // 업데이트를 true/ false로 구분해서 같은 페이지에 넣어주면 됨
-  // update board를 result에 담아서 써도 됨
 
   const onClickUpdate = async () => {
     const currentFiles = JSON.stringify(fileUrls);

@@ -17,7 +17,7 @@ export const CREATE_BOARD_COMMENTS = gql`
 export const UPDATE_BOARD_COMMENT = gql`
   mutation updateBoardComment(
     $updateBoardCommentInput: UpdateBoardCommentInput!
-    $password: String
+    $password: String!
     $boardCommentId: ID!
   ) {
     updateBoardComment(

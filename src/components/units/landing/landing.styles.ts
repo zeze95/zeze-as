@@ -1,42 +1,16 @@
 import styled from "@emotion/styled";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { breakPoints } from "../../../../styles/media";
 
 export const Wrapper = styled.div`
-  /* width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-start; */
-
   width: 100vw;
   height: 100vh;
-  /* 
-  left: calc(-50vw + 50%); */
-  background: url("/landing/31.png");
-  background-size: 100vw 100vh;
+
+  background: url("/landing/31.png") center/cover;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  -ms-overflow-style: none !important;
-  ::-webkit-scrollbar {
-    display: none;
-    width: none !important;
-  }
   position: relative;
-`;
-
-export const RandingPage = styled.img`
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url(/images/main/mains.jpeg);
-
-  position: absolute;
-  background-size: cover;
-  z-index: 0;
-`;
-
-export const Btn = styled.button`
-  display: none;
 `;
 
 export const TextBox = styled.div`
@@ -81,15 +55,21 @@ export const TextBox = styled.div`
       }
     }
   }
+  @media ${breakPoints.mobile} {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 3rem;
+  }
 `;
 
 export const ParalWrapper = styled(Parallax)`
-  -ms-overflow-style: none !important;
+  /* -ms-overflow-style: none !important;
   ::-webkit-scrollbar {
     display: none;
     width: none !important;
   }
-  overflow-x: hidden;
+  overflow-x: hidden; */
 `;
 export const Layer1 = styled(ParallaxLayer)`
   display: flex;
@@ -97,9 +77,12 @@ export const Layer1 = styled(ParallaxLayer)`
   justify-content: center;
   align-items: center;
   position: absolute;
-
   width: 100vw;
   height: 100vh;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    object-fit: none;
+  }
 `;
 
 export const Layer2 = styled(ParallaxLayer)`
@@ -125,12 +108,44 @@ export const Layer3 = styled(ParallaxLayer)`
 
 export const LayerImg = styled.img`
   position: absolute;
-  background-size: cover;
-  width: 100vw;
+  background-size: center/cover;
+  overflow: hidden;
+  width: 100%;
   height: 100vh;
   z-index: 10;
 `;
 
+export const LayerImg1 = styled.div`
+  /* position: absolute;
+  background-size: center/cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  z-index: 10; */
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/landing/to.png");
+`;
+
+export const LayerImg2 = styled.div`
+  /* position: absolute;
+  background-size: center/cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  z-index: 10; */
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/landing/board.png");
+`;
 export const Text = styled.div`
   width: 300px;
   height: 50px;
