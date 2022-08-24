@@ -6,8 +6,7 @@ import { useMutation } from "@apollo/client";
 import { CREATE_USED_ITEM, UPDATE_USED_ITEM } from "./marketWrite.quries";
 import { useRouter } from "next/router";
 import { Modal } from "antd";
-import { useEffect, useState } from "react";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { IMarketWrite } from "./marketWrite.types";
 
 const schema = yup.object({

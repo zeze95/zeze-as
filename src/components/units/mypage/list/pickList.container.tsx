@@ -1,5 +1,5 @@
-import { gql } from "@apollo/client";
-import { useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
+
 // import { basketState } from "../../../../commons/store";
 // import { useRecoilState } from "recoil";
 // import { useEffect } from "react";

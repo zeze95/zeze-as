@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../../styles/media";
+import ReactPlayer from "react-player";
 export const Wrapper = styled.div`
   width: 100%;
   margin: 50px 0;
@@ -153,7 +154,5 @@ export const Button = styled.button`
     width: 100px;
   }
 `;
-
-import ReactPlayer from "react-player";
 
 export const Youtube = styled(ReactPlayer)``;

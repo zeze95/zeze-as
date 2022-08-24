@@ -3,10 +3,8 @@ import LayoutBanner from "./banner/LayoutBenner.container";
 import LayoutFooter from "./footer/LayoutFooter.container";
 import LayoutHeader from "./header/LayoutHeader.container";
 import LayoutNavigation from "./navigation/LayoutNavigation.container";
-import LayoutSide from "./side";
 import { useRouter } from "next/router";
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../styles/media";
 
 interface ILayoutProps {
   children: ReactNode;
@@ -41,21 +39,21 @@ const MediaSticky = styled.div`
   }
 `;
 
-const HIDDENT_Layout = ["/"];
-const SHOW_BANNER = ["/main"];
+const HIDDENTLayout = ["/"];
+const SHOWBANNER = ["/main"];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
 
-  const hidden_Layout = HIDDENT_Layout.includes(router.asPath);
-  const show_banner = SHOW_BANNER.includes(router.asPath);
+  const hiddenLayout = HIDDENTLayout.includes(router.asPath);
+  const showbanner = SHOWBANNER.includes(router.asPath);
   return (
     <>
-      {!hidden_Layout ? (
+      {!hiddenLayout ? (
         <>
           <MediaSticky>
             <LayoutHeader />
-            {show_banner && <LayoutBanner />}
+            {showbanner && <LayoutBanner />}
             <LayoutNavigation />
           </MediaSticky>
           <Body>{props.children}</Body>
