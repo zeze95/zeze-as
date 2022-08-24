@@ -13,17 +13,19 @@ import { onError } from "@apollo/client/link/error";
 
 import { getAccessToken } from "../libraries/getAccessToken";
 import { ReactNode } from "react";
+import { useRouter } from "next/router";
 interface ILayoutProps {
   children: ReactNode;
 }
 
 export default function ApolloSetting(props: ILayoutProps) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const router = useRouter();
   useEffect(() => {
     getAccessToken().then(newAccessToken => {
       setAccessToken(newAccessToken);
     });
-  }, []);
+  }, [router]);
 
   const errorLink = onError(({ graphQLErrors, operation, forward }) => {
     if (graphQLErrors) {
