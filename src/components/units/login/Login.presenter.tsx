@@ -18,7 +18,7 @@ export default function LoginPageUI(props: ILoginPageUI) {
                 placeholder="이메일을 입력하세요"
                 type="text"
                 register={props.register("email")}
-                defaultValue="q@q.com"
+                defaultValue="test01@gmail.com"
               ></Input01>
               <S.Error>{props.formState.errors.email?.message}</S.Error>
               비밀번호
@@ -26,7 +26,7 @@ export default function LoginPageUI(props: ILoginPageUI) {
                 placeholder="비밀번호를 입력하세요"
                 type="password"
                 register={props.register("password")}
-                defaultValue="!123123123"
+                defaultValue="!123123qwe"
               ></Input01>
               <S.Error>{props.formState.errors.password?.message}</S.Error>
             </S.InputWrapper>

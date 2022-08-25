@@ -24,8 +24,8 @@ export default function SignUp() {
     password: yup
       .string()
       .matches(
-        / ^[a-zA-Z0-9]{8,16}$/,
-        "비밀번호는 영문, 숫자를 포함한 8~16자의 문자입니다"
+        /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W))(?=.*[!@#$%^*+=-]).{8,16}$/,
+        "비밀번호는 영문, 숫자, 특수문자를 포함한 8~16자리로 입력바랍니다."
       ),
     passwordConfirm: yup
       .string()
@@ -48,7 +48,7 @@ export default function SignUp() {
         },
       });
       Modal.success({ content: "회원 가입완료." });
-      router.push("/boards");
+      router.push("/main");
     } catch (error) {
       Modal.error({ content: error.message });
     }
