@@ -49,13 +49,12 @@ export default function LoginPageContainer() {
           },
         },
       });
-      const userInfo = resultUserInfo.data.fetchUserLoggedIn;
       // 3. 글로벌스테이트에 저장하기
-      setAccessToken(accessToken);
-      setUserInfo(userInfo);
       localStorage.setItem("accessToken", accessToken);
+      setAccessToken(accessToken);
+      const userInfo = resultUserInfo.data.fetchUserLoggedIn;
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
+      setUserInfo(userInfo);
       Modal.success({ content: `${userinfo.name}님 환영합니다` });
       router.push("/main");
     } catch (error) {
