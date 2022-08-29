@@ -7,12 +7,10 @@ import {
 } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
 import { useRecoilState } from "recoil";
-import { useEffect } from "react";
+import { useEffect, ReactNode } from "react";
 import { accessTokenState } from "../store";
 import { onError } from "@apollo/client/link/error";
-
 import { getAccessToken } from "../libraries/getAccessToken";
-import { ReactNode } from "react";
 import { useRouter } from "next/router";
 interface ILayoutProps {
   children: ReactNode;

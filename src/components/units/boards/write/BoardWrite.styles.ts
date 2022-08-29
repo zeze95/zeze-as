@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../styles/media";
 import { ISubmitButtonProps } from "./BoardWrite.type";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   border: 1px solid black;
   margin: 100px;
   padding: 80px 102px 100px 102px;
@@ -12,11 +13,22 @@ export const Wrapper = styled.div`
   border: none;
   background-color: #dff2fc;
   box-shadow: 0px 0px 20px #e1bae3;
+  @media (max-width: 991px) {
+    width: 90%;
+    margin: 0;
+    padding: 40px;
+  }
 `;
 
 export const Title = styled.div`
   font-size: 36px;
   font-weight: bold;
+  @media ${breakPoints.tablet} {
+    font-size: 32px;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 28px;
+  }
 `;
 
 export const WriterWrapper = styled.div`
@@ -25,20 +37,30 @@ export const WriterWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-top: 40px;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    padding-top: 20px;
+  }
 `;
 
 export const Writer = styled.input`
-  width: 486px;
+  width: 90%;
   height: 52px;
   padding-left: 16px;
   border: 1px solid #009dda;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 `;
 
 export const Password = styled.input`
-  width: 486px;
+  width: 100%;
   height: 52px;
   padding-left: 16px;
   border: 1px solid #009dda;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 `;
 
 export const Label = styled.div`
@@ -48,18 +70,19 @@ export const Label = styled.div`
 `;
 
 export const InputWrapper = styled.div`
+  width: 100%;
   padding-top: 40px;
 `;
 
 export const Subject = styled.input`
-  width: 996px;
+  width: 100%;
   height: 52px;
   padding-left: 16px;
   border: 1px solid #009dda;
 `;
 
 export const Contents = styled.textarea`
-  width: 996px;
+  width: 100%;
   height: 480px;
   padding-left: 16px;
   padding: 14px;
@@ -89,7 +112,7 @@ export const SearchButton = styled.button`
 `;
 
 export const Address = styled.input`
-  width: 996px;
+  width: 100%;
   height: 52px;
   margin-top: 16px;
   padding-left: 16px;
@@ -97,19 +120,19 @@ export const Address = styled.input`
 `;
 
 export const Youtube = styled.input`
-  width: 996px;
+  width: 100%;
   height: 52px;
   padding-left: 16px;
   border: 1px solid #009dda;
 `;
 
 export const ImageWrapper = styled.div`
-  width: 996px;
+  width: 100%;
   padding-top: 40px;
 `;
 
 export const OptionWrapper = styled.div`
-  width: 996px;
+  width: 100%;
   padding-top: 40px;
 `;
 
