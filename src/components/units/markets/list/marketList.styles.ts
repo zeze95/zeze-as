@@ -162,4 +162,7 @@ export const SellerName = styled.div`
   font-size: 16px;
 `;
 
+export const CreatAt = styled.div`
+  font-size: 12px;
+`;
 export const PickBox = styled.div``;

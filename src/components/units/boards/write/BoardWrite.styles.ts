@@ -4,14 +4,13 @@ import { ISubmitButtonProps } from "./BoardWrite.type";
 
 export const Wrapper = styled.div`
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #d2d2d2;
   margin: 100px;
   padding: 80px 102px 100px 102px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: none;
-  background-color: #dff2fc;
+  background-color: #d7e9f7;
   @media (max-width: 991px) {
     width: 90%;
     margin: 0;

@@ -14,7 +14,6 @@ export default function BoardDetail() {
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardId: router.query._id },
   });
-  // console.log(data.fetchBoard.boardAddress);
 
   const [likeBoard] = useMutation(LIKE_BOARD);
   const [dislikeBoard] = useMutation(DISLIKE_BOARD);
@@ -44,7 +43,7 @@ export default function BoardDetail() {
       router.push(`/boards`);
       Modal.success({ content: "삭제가 완료되었습니다." });
     } catch (error) {
-      console.log(error);
+      Modal.error({ content: "삭제를 할수 없습니다" });
     }
   };
 

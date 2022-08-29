@@ -42,7 +42,7 @@ export default function BoardDetailUI(props: IBoardDetailUI) {
           {props.data?.fetchBoard.youtubeUrl && (
             <S.Youtube url={props.data?.fetchBoard.youtubeUrl} width="100%" />
           )}
-          {props.data?.fetchBoard?.boardAddress && (
+          {props.data?.fetchBoard?.boardAddress?.address && (
             <KakakomapPage
               address={props.data?.fetchBoard?.boardAddress?.address}
             />

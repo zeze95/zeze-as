@@ -28,6 +28,5 @@ export default function MarketEditPage() {
   const { data, loading } = useQuery(FETCH_USED_ITEM, {
     variables: { useditemId: router.query._id },
   });
-  console.log(data);
   return loading ? <></> : <MarketWrite isEdit={true} boardData={data} />;
 }

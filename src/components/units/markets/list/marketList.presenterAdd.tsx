@@ -1,3 +1,4 @@
+import { getDate } from "../../../../commons/libraries/utils";
 import * as S from "./marketList.styles";
 import { IMarketListUIAdd } from "./marketList.types";
 
@@ -21,6 +22,7 @@ export default function MarketListUIAdd(props: IMarketListUIAdd) {
         판매자 정보
         <S.SellerImg src="/images/profile.png" />
         <S.SellerName>{props.el?.seller.name}</S.SellerName>
+        <S.CreatAt>{getDate(props.el?.createdAt)}</S.CreatAt>
       </S.SellerWrapper>
     </S.ListDiv>
   );

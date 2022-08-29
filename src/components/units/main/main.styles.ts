@@ -76,6 +76,7 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid #d2d2d2;
+  background-color: #ffffff;
   /* border-radius: 10px; */
   overflow: hidden;
   padding: 10px;
