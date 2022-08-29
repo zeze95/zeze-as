@@ -6,7 +6,7 @@ import { getDate } from "../../../commons/libraries/utils";
 import { IMainboardUI } from "./main.types";
 export default function MainboardUI(props: IMainboardUI) {
   const { data } = useQuery(FETCH_BOARDS);
-  // console.log(data.fetchBoards);
+
   return (
     <Board.InWrapper>
       {data?.fetchBoards
