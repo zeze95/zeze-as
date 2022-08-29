@@ -1,7 +1,6 @@
 import * as S from "./marketWrite.styles";
 import Input02 from "../../../commons/inputs/02";
-import "react-quill/dist/quill.snow.css";
-import dynamic from "next/dynamic";
+
 import Button01 from "../../../../commons/buttons/01";
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
@@ -9,8 +8,6 @@ import { v4 as uuidv4 } from "uuid";
 import Uploads from "../../../commons/uploads/02/Uploads01.container";
 import { IMarketWirteUIProps } from "./marketWrite.types";
 import KakakomapPage from "../../../../commons/libraries/kakao.map";
-
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function MarketWirteUI(props: IMarketWirteUIProps) {
   return (
@@ -48,7 +45,7 @@ export default function MarketWirteUI(props: IMarketWirteUIProps) {
                 defaultValue={props.boardData?.fetchUseditem.remarks}
               />
               상품설명
-              <ReactQuill
+              <S.MyQuill
                 onChange={props.onChangeContents}
                 defaultValue={props.boardData?.fetchUseditem.contents}
               />

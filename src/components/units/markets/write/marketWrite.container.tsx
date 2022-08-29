@@ -54,7 +54,7 @@ export default function MarketWrite(props: IMarketWrite) {
 
   const onClickWrite = async (data: any) => {
     try {
-      await createUseditem({
+      const result = await createUseditem({
         variables: {
           createUseditemInput: {
             name: data.name,
@@ -72,7 +72,7 @@ export default function MarketWrite(props: IMarketWrite) {
         },
       });
       Modal.success({ content: "등록 완료" });
-      router.push("/boards");
+      router.push(`/markets/${result.data.createBoard._id}`);
     } catch (error) {
       Modal.error({ content: error.message });
     }

@@ -13,7 +13,7 @@ export default function MarketListUIAdd(props: IMarketListUIAdd) {
       ></S.TitleImg>
       <S.TitleBox>
         <S.Title id={props.el?._id}>제목: {props.el?.name}</S.Title>
-        <S.SubTitle>상품 요약:{props.el?.remarks}</S.SubTitle>
+        <S.SubTitle>상품 요약: {props.el?.remarks}</S.SubTitle>
         <S.TagTitle>{props.el?.tag}</S.TagTitle>
         <S.RWrapper>가격: {props.el?.price.toLocaleString()}원</S.RWrapper>
       </S.TitleBox>

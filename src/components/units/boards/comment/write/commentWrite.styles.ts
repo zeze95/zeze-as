@@ -29,7 +29,7 @@ export const UserWrapper = styled.div`
   gap: 1rem;
   @media ${breakPoints.mobile} {
     height: auto;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: flex-start;
   }
 `;
@@ -51,6 +51,9 @@ export const UserInput = styled.input`
   background-color: #ffffff;
   border: 1px solid #b2c8df;
   padding-left: 10px;
+  @media ${breakPoints.mobile} {
+    width: 48%;
+  }
 `;
 
 export const ContentsWrapper = styled.div`
@@ -93,7 +96,7 @@ export const MobileBtn = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
+    width: 30vw;
     height: 50px;
     background-color: #6e85b7;
     border: 1px solid #b2c8df;

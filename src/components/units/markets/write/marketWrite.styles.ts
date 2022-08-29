@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
+import "react-quill/dist/quill.snow.css";
+import dynamic from "next/dynamic";
 import { breakPoints } from "../../../../../styles/media";
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 interface ISubmitButtonProps {
   isActive: boolean;
 }
@@ -207,4 +210,9 @@ export const Error = styled.div`
   padding-top: 10px;
   font-size: 14px;
   color: red;
+`;
+
+export const MyQuill = styled(ReactQuill)`
+  width: 100%;
+  height: 300px;
 `;

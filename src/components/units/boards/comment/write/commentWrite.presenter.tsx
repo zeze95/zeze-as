@@ -26,19 +26,22 @@ export default function CommentWriteUI(props: IBoardCommentWriteUIProps) {
               placeholder="비밀번호"
               {...props.register("password")}
             ></CM.UserInput>
+          </CM.UserInputWrapper>
+          <CM.UserInputWrapper>
+            <Rate
+              onChange={props.onChangeStar}
+              value={props.star}
+              tooltips={props.desc}
+            />
+            {props.isEdit && (
+              <div onClick={props.onClickUpdateCancle}>수정 취소</div>
+            )}
             <CM.MobileBtn
               onClick={props.isEdit ? props.onClickUpdate : props.onClickWrite}
             >
               {props.isEdit ? "수정" : "등록"}
             </CM.MobileBtn>
           </CM.UserInputWrapper>
-
-          <Rate
-            onChange={props.onChangeStar}
-            value={props.star}
-            tooltips={props.desc}
-          />
-          {props.isEdit && <div onClick={props.onClickUpdateCancle}>dd</div>}
         </CM.UserWrapper>
         <CM.ContentsWrapper>
           <CM.Contents

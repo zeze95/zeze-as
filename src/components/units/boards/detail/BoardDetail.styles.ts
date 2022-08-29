@@ -102,6 +102,7 @@ export const UploadImg = styled.img`
 `;
 
 export const BottomWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -151,7 +152,7 @@ export const Button = styled.button`
     background-color: #f8f9d7;
   }
   @media ${breakPoints.mobile} {
-    width: 100px;
+    width: 80px;
   }
 `;
 

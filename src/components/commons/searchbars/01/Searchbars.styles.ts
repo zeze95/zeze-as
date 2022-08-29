@@ -9,12 +9,16 @@ export const Searchbar = styled.div`
   flex-direction: row;
   align-items: center;
   margin: 10px 0px 10px auto;
+  @media (max-width: 991px) {
+    height: 40px;
+  }
 `;
 
 export const SearchbarInput = styled.input`
   width: 100%;
   height: 100%;
-  border: none;
+  border: 1px solid #d2d2d2;
+  border-radius: 10px;
   outline: none;
   background: none;
   padding-left: 20px;

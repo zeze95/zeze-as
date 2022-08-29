@@ -95,6 +95,9 @@ export const Button = styled.button`
   :hover {
     background-color: #6e85b7;
   }
+  @media (max-width: 991px) {
+    height: 40px;
+  }
 `;
 
 export const SearchTitle = styled.span`

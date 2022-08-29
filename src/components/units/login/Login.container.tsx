@@ -11,7 +11,7 @@ import { Modal } from "antd";
 
 export default function LoginPageContainer() {
   const [, setAccessToken] = useRecoilState(accessTokenState);
-  const [userinfo, setUserInfo] = useRecoilState(userInfoState);
+  const [, setUserInfo] = useRecoilState(userInfoState);
   const client = useApolloClient();
   const router = useRouter();
   const [loginUser] = useMutation(LOGIN_USER);
@@ -55,7 +55,7 @@ export default function LoginPageContainer() {
       const userInfo = resultUserInfo.data.fetchUserLoggedIn;
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
       setUserInfo(userInfo);
-      Modal.success({ content: `${userinfo.name}님 환영합니다` });
+      Modal.success({ content: `환영합니다` });
       router.push("/main");
     } catch (error) {
       Modal.error({ content: error.message });

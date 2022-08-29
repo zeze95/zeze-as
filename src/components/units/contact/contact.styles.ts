@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../styles/media";
 
 export const Wrapper = styled.section`
   width: 70%;
@@ -19,6 +20,9 @@ export const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+  }
 `;
 export const HighLighting = styled.div`
   opacity: 0.35;
@@ -27,6 +31,10 @@ export const HighLighting = styled.div`
   margin-top: -2.8em;
   margin-bottom: 1em;
   background-color: #6e85b7;
+  @media ${breakPoints.mobile} {
+    width: 200px;
+    height: 1em;
+  }
 `;
 export const FormWrapper = styled.div`
   width: 100%;

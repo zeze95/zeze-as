@@ -21,7 +21,6 @@ const URLShareButton = styled.button`
   width: 30px;
   height: 30px;
   color: white;
-  border-radius: 24px;
   border: none;
   font-size: 10px;
 `;
@@ -81,15 +80,15 @@ export default function ShareButton() {
   return (
     <Wrapper>
       <KakaoIcon onClick={handleKakaoButton} src="/icons/Kakao.jpeg" />
+      <CopyToClipboard text={currentUrl}>
+        <URLShareButton onClick={onClickURL}>URL</URLShareButton>
+      </CopyToClipboard>
       <FacebookShareButton url={currentUrl}>
         <Facebook round={true} />
       </FacebookShareButton>
       <TwitterShareButton url={currentUrl}>
         <Twitter round={true} />
       </TwitterShareButton>
-      <CopyToClipboard text={currentUrl}>
-        <URLShareButton onClick={onClickURL}>URL</URLShareButton>
-      </CopyToClipboard>
     </Wrapper>
   );
 }

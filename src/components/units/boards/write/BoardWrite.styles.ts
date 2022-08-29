@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
   align-items: center;
   border: none;
   background-color: #dff2fc;
-  box-shadow: 0px 0px 20px #e1bae3;
   @media (max-width: 991px) {
     width: 90%;
     margin: 0;
