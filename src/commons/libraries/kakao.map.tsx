@@ -6,10 +6,10 @@ declare const window: typeof globalThis & {
 };
 const MapWrapper = styled.div`
   width: 100%;
-  height: 450px;
+  height: auto;
   display: flex;
   justify-content: center;
-  overflow: auto;
+  overflow: hidden;
   @media ${breakPoints.mobile} {
     height: 300px;
   }

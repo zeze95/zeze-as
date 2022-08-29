@@ -15,6 +15,9 @@ export const Wrapper = styled.div`
   border: none;
   background-color: #dff2fc;
   border-radius: 15px;
+  @media (max-width: 991px) {
+    padding: 25px;
+  }
 `;
 
 export const Title = styled.div`
@@ -84,6 +87,9 @@ export const AdresseWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
 `;
 export const MapWrapper = styled.div`
   width: 50%;
