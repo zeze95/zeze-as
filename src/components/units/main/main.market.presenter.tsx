@@ -25,14 +25,17 @@ export default function MainMarketUI(props: IMainMarketUI) {
             <Market.ItemTextWrapper>
               <Market.ItemTitle> {el.name}</Market.ItemTitle>
               <Market.UserWrapper>
-                <Market.UserName>판매자: {el.seller.name}</Market.UserName>
+                <Market.UserName>
+                  <Market.Text>판매자: </Market.Text>
+                  {el.seller.name}
+                </Market.UserName>
                 <Market.AtTime>{getDate(el.createdAt)}</Market.AtTime>
               </Market.UserWrapper>
 
               {typeof window !== "undefined" && (
                 <Market.Contents
                   dangerouslySetInnerHTML={{
-                    __html: Dompurify.sanitize(el.contents.slice(0, 40)),
+                    __html: Dompurify.sanitize(el.contents.slice(0, 25)),
                   }}
                 />
               )}

@@ -11,6 +11,9 @@ export const Wrapper = styled.section`
   border: 3px solid #6e85b7;
   border-radius: 20px;
   background-color: #ffffff;
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 export const Title = styled.div`
   width: 100%;

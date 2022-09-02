@@ -13,10 +13,19 @@ export default function MarketListUIAdd(props: IMarketListUIAdd) {
         src={`https://storage.googleapis.com/${props.el?.images[0]}`}
       ></S.TitleImg>
       <S.TitleBox>
-        <S.Title id={props.el?._id}>제목: {props.el?.name}</S.Title>
-        <S.SubTitle>상품 요약: {props.el?.remarks}</S.SubTitle>
+        <S.Title id={props.el?._id}>
+          <S.Text>제목: </S.Text>
+          {props.el?.name}
+        </S.Title>
+        <S.SubTitle>
+          <S.Text>상품 요약: </S.Text>
+          {props.el?.remarks}
+        </S.SubTitle>
         <S.TagTitle>{props.el?.tag}</S.TagTitle>
-        <S.RWrapper>가격: {props.el?.price.toLocaleString()}원</S.RWrapper>
+        <S.RWrapper>
+          <S.Text>가격: </S.Text>
+          {props.el?.price.toLocaleString()}원
+        </S.RWrapper>
       </S.TitleBox>
       <S.SellerWrapper>
         판매자 정보
