@@ -8,4 +8,5 @@ function MaketWirtePage() {
     </>
   );
 }
+// export default MaketWirtePage;
 export default WithAuth(MaketWirtePage);

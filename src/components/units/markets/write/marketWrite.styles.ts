@@ -9,6 +9,7 @@ interface ISubmitButtonProps {
 
 export const Wrapper = styled.div`
   width: 100%;
+  height: auto;
   border: 2px solid #d2d2d2;
   margin: 100px;
   padding: 80px 102px 100px 102px;
@@ -37,6 +38,7 @@ export const WriterWrapper = styled.div`
 `;
 export const MyForm = styled.form`
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +50,14 @@ export const TagWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const TagContents = styled.div`
+export const TagInsideWrappert = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const TagContents = styled.span`
   width: 100%;
   height: 50px;
   margin-bottom: 30px;
@@ -72,12 +81,14 @@ export const Label = styled.div`
 `;
 
 export const InputWrapper = styled.div`
-  width: 50%;
+  width: 80%;
+  height: auto;
   padding-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.6rem;
   @media ${breakPoints.mobile} {
     width: 90%;
   }
@@ -107,6 +118,9 @@ export const ZipcodeWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 1rem;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ZipcodeHead = styled.div`
@@ -214,4 +228,5 @@ export const Error = styled.div`
 export const MyQuill = styled(ReactQuill)`
   width: 100%;
   height: 300px;
+  margin-bottom: 3.6rem;
 `;

@@ -57,12 +57,16 @@ export default function MarketWirteUI(props: IMarketWirteUIProps) {
               />
               태그입력
               <S.TagWrapper>
-                {props.tagsArr.map((el: any, index: number) => (
-                  <S.TagContents key={index} onClick={props.deleteTags(index)}>
-                    {el}
-                  </S.TagContents>
-                ))}
-
+                <S.TagInsideWrappert>
+                  {props.tagsArr.map((el: any, index: number) => (
+                    <S.TagContents
+                      key={index}
+                      onClick={props.deleteTags(index)}
+                    >
+                      {el}
+                    </S.TagContents>
+                  ))}
+                </S.TagInsideWrappert>
                 <S.TagInput
                   type="text"
                   placeholder="태그를 입력하세요"
