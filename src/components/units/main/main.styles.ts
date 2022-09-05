@@ -116,11 +116,12 @@ export const UserWrapper = styled.div`
 
 export const ItemTitle = styled.div`
   width: 100%;
-  height: 30px;
+  height: auto;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   @media (max-width: 991px) {
-    height: auto;
+    font-size: 15px;
+    /* height: auto; */
   }
 `;
 
