@@ -64,7 +64,7 @@ export const MainImg = styled.img`
 `;
 export const ItemImg = styled.img`
   width: 100%;
-  height: 300px;
+  height: 200px;
   overflow: hidden;
 `;
 
@@ -80,7 +80,7 @@ export const Item = styled.div`
   /* border-radius: 10px; */
   overflow: hidden;
   padding: 10px;
-  gap: 1rem;
+  gap: 0.5rem;
   :hover {
     transform: scale(1.1);
   }
@@ -93,7 +93,7 @@ export const Item = styled.div`
 `;
 export const ItemTextWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,7 +104,6 @@ export const ItemTextWrapper = styled.div`
 
 export const UserWrapper = styled.div`
   width: 100%;
-  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -145,7 +144,7 @@ export const AtTime = styled.div`
 `;
 export const Contents = styled.div`
   width: 100%;
-  height: 100%;
+  height: auto;
   font-size: 16px;
   overflow: hidden;
 `;
@@ -155,8 +154,10 @@ export const Price = styled.div`
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+  margin-top: auto;
 `;
 export const Text = styled.span`
+  font-size: 14px;
   @media (max-width: 991px) {
     display: none;
   }

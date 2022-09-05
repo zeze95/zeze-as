@@ -67,7 +67,6 @@ export const Btn = styled.span`
   border: 1px solid #7ecef4;
   cursor: pointer;
   font-size: 14px;
-  padding-left: 6px;
   @media ${breakPoints.tablet} {
     width: 70px;
     padding-left: 0px;

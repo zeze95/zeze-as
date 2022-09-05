@@ -102,12 +102,17 @@ export const AdresseWrapper = styled.div`
   justify-content: space-between;
   @media ${breakPoints.mobile} {
     flex-direction: column;
+    height: 420px;
   }
 `;
 export const MapWrapper = styled.div`
   width: 50%;
   height: 100%;
   overflow: hidden;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 50%;
+  }
 `;
 
 export const ZipcodeWrapper = styled.div`
@@ -120,6 +125,7 @@ export const ZipcodeWrapper = styled.div`
   gap: 1rem;
   @media ${breakPoints.mobile} {
     width: 100%;
+    height: 50%;
   }
 `;
 
@@ -128,6 +134,8 @@ export const ZipcodeHead = styled.div`
   height: auto;
   display: flex;
   flex-direction: row;
+  @media ${breakPoints.mobile} {
+  }
 `;
 
 export const Zipcode = styled.input`
@@ -155,7 +163,7 @@ export const Address = styled.input`
   width: 100%;
   height: 52px;
   padding-left: 16px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: 1px solid #009dda;
 `;
 
