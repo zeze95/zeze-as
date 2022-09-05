@@ -119,7 +119,6 @@ export const ItemTitle = styled.div`
   height: 30px;
   font-size: 18px;
   font-weight: 600;
-  overflow: hidden;
   @media (max-width: 991px) {
     height: auto;
   }
