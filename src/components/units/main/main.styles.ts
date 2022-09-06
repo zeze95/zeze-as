@@ -70,7 +70,7 @@ export const ItemImg = styled.img`
 
 export const Item = styled.div`
   width: 25%;
-  height: 350px;
+  height: 355px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +80,7 @@ export const Item = styled.div`
   /* border-radius: 10px; */
   overflow: hidden;
   padding: 10px;
-  gap: 0.5rem;
+  gap: 5px;
   :hover {
     transform: scale(1.1);
   }
@@ -99,23 +99,25 @@ export const ItemTextWrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  gap: 5px;
 `;
 
 export const UserWrapper = styled.div`
   width: 100%;
+  height: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   /* font-size: 0.6rem; */
   @media (max-width: 991px) {
     height: auto;
+    align-items: center;
   }
 `;
 
 export const ItemTitle = styled.div`
   width: 100%;
-  height: auto;
+  height: 30px;
   font-size: 18px;
   font-weight: 700;
   @media (max-width: 991px) {
@@ -144,13 +146,13 @@ export const AtTime = styled.div`
 `;
 export const Contents = styled.div`
   width: 100%;
-  height: auto;
+  height: 60px;
   font-size: 16px;
   overflow: hidden;
 `;
 export const Price = styled.div`
   width: 100%;
-  height: 40px;
+  height: 30px;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -160,5 +162,6 @@ export const Text = styled.span`
   font-size: 14px;
   @media (max-width: 991px) {
     display: none;
+    font-size: 0;
   }
 `;

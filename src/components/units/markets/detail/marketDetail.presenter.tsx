@@ -69,10 +69,17 @@ export default function MarketsDetailUI(props: IMarketsDetailUI) {
           <S.RemarksWrapper>
             {props.data?.fetchUseditem?.remarks}
           </S.RemarksWrapper>
-          <S.TagWrapper>#{props.data?.fetchUseditem?.tag}</S.TagWrapper>
-          <KakakomapPage
-            address={props.data?.fetchUseditem?.useditemAddress?.address}
-          />
+          <S.TagWrapper>
+            {props.data?.fetchUseditem?.tags.map((el: string) => (
+              <S.Tag key={el}>#{el}</S.Tag>
+            ))}
+          </S.TagWrapper>
+
+          {props.data?.fetchUseditem?.useditemAddress?.address && (
+            <KakakomapPage
+              address={props.data?.fetchUseditem?.useditemAddress?.address}
+            />
+          )}
           <br />
           <ShareButton />
         </S.MainWrapper>

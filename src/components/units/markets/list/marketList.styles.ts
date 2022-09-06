@@ -23,6 +23,7 @@ export const Header = styled.div`
   position: sticky;
   top: 0;
   background-color: #ffffff;
+  border-bottom: 1px solid black;
   @media ${breakPoints.tablet} {
     top: 11vh;
     border: none;
@@ -52,7 +53,7 @@ export const ListDiv = styled.div`
   height: 200px;
   display: flex;
   flex-direction: row;
-  margin: 10px 0;
+  /* margin-bottom: 10px; */
   border-bottom: 1px solid black;
   @media (max-width: 991px) {
     width: 95%;

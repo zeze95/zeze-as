@@ -23,24 +23,28 @@ export const RemarksWrapper = styled.div`
 `;
 
 export const PriceBox = styled.div`
-  width: 300px;
+  width: auto;
   font-size: 32px;
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border-bottom: 5px double skyblue;
+  padding: 0 1rem;
+  border-bottom: 5px solid #6e85b7;
 `;
 
 export const TagWrapper = styled.div`
   width: 80%;
   height: auto;
   display: flex;
+  flex-direction: row;
   flex-direction: center;
   align-items: center;
   color: #dbdbdb;
 `;
+
+export const Tag = styled.div``;
 
 export const Btn = styled.div`
   width: 100px;

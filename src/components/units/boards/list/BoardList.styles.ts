@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../styles/media";
 import { ISearchTitle } from "./BoardList.type";
 
 export const Wrapper = styled.div`
@@ -43,11 +44,17 @@ export const HeaderFixTen = styled.div`
 export const HeaderFixName = styled.div`
   width: 20%;
   text-align: center;
+  @media ${breakPoints.mobile} {
+    font-size: 14px;
+  }
 `;
 
 export const HeaderTitle = styled.div`
   width: 70%;
   text-align: center;
+  @media ${breakPoints.mobile} {
+    font-size: 14px;
+  }
 `;
 
 export const FixTen = styled.div`
@@ -58,6 +65,9 @@ export const FixTen = styled.div`
 export const FixName = styled.div`
   width: 20%;
   text-align: center;
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
+  }
 `;
 
 export const TitleList = styled.div`
@@ -66,6 +76,9 @@ export const TitleList = styled.div`
   cursor: pointer;
   :hover {
     color: blue;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
   }
 `;
 
