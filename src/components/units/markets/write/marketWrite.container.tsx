@@ -72,7 +72,7 @@ export default function MarketWrite(props: IMarketWrite) {
         },
       });
       Modal.success({ content: "등록 완료" });
-      router.push(`/markets/${result.data.createBoard._id}`);
+      router.push(`/markets/${result.data.createUseditem._id}`);
     } catch (error) {
       Modal.error({ content: error.message });
     }
