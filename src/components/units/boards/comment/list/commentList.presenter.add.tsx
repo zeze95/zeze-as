@@ -1,6 +1,6 @@
 import * as S from "./commentList.styles";
 import { ICommentListUIPropsAdd } from "./commentList.types";
-import { Rate, Modal } from "antd";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
 import { useMutation } from "@apollo/client";
@@ -68,7 +68,7 @@ export default function CommentListUIAdd(props: ICommentListUIPropsAdd) {
           <S.LineDiv />
           <S.ContentsSection>
             <S.IconSection>
-              <Rate value={props.el?.rating} disabled />
+              <S.MyRate value={props.el?.rating} disabled />
               <S.BtnWrapper>
                 <S.Btn onClick={onClickUpdate}>
                   <S.UpdateIcon />

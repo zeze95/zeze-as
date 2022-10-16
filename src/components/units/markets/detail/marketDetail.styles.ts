@@ -32,6 +32,9 @@ export const PriceBox = styled.div`
   margin: 0 auto;
   padding: 0 1rem;
   border-bottom: 5px solid #6e85b7;
+  @media ${breakPoints.mobile} {
+    font-size: 16px;
+  }
 `;
 
 export const TagWrapper = styled.div`
@@ -42,6 +45,7 @@ export const TagWrapper = styled.div`
   flex-direction: center;
   align-items: center;
   color: #dbdbdb;
+  gap: 10px;
 `;
 
 export const Tag = styled.div``;

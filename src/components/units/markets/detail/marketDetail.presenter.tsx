@@ -71,7 +71,7 @@ export default function MarketsDetailUI(props: IMarketsDetailUI) {
           </S.RemarksWrapper>
           <S.TagWrapper>
             {props.data?.fetchUseditem?.tags.map((el: string) => (
-              <S.Tag key={el}>#{el}</S.Tag>
+              <S.Tag key={el}>{el}</S.Tag>
             ))}
           </S.TagWrapper>
 

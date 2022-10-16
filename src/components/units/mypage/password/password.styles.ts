@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../styles/media";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -6,6 +7,12 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 80px 120px;
+  @media ${breakPoints.tablet} {
+    padding: 30px;
+  }
+  @media ${breakPoints.mobile} {
+    padding: 0;
+  }
 `;
 
 export const Header = styled.div`
@@ -26,6 +33,13 @@ export const InputWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+
+  @media ${breakPoints.mobile} {
+    height: 15vh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3vh;
+  }
 `;
 
 export const InputTitle = styled.div`
@@ -39,6 +53,13 @@ export const MyInputs = styled.input`
   border: none;
   background-color: #e0e0e0;
   color: #bdbdbd;
+
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    height: 5vh;
+    border-radius: 10px;
+    text-align: center;
+  }
 `;
 export const Footer = styled.div`
   width: 100%;
@@ -46,6 +67,9 @@ export const Footer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    justify-content: center;
+  }
 `;
 
 export const Btn = styled.button`
@@ -54,4 +78,9 @@ export const Btn = styled.button`
   background-color: #bdbdbd;
   border: none;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 120px;
+    height: 4vh;
+    border-radius: 10px;
+  }
 `;

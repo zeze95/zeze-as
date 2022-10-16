@@ -152,6 +152,9 @@ export const SellerWrapper = styled.div`
   justify-content: center;
   gap: 1rem;
   border-left: 1px solid #d2d2d2;
+  @media ${breakPoints.mobile} {
+    margin-left: 1vw;
+  }
 `;
 
 export const SellerImg = styled.img`
@@ -166,6 +169,9 @@ export const SellerName = styled.div`
 
 export const CreatAt = styled.div`
   font-size: 12px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 export const PickBox = styled.div``;
 

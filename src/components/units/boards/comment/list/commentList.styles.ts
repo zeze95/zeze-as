@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import { breakPoints } from "../../../../../../styles/media";
+import { Rate } from "antd";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -69,6 +71,9 @@ export const UserSection = styled.section`
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
+  @media ${breakPoints.mobile} {
+    width: 20%;
+  }
 `;
 export const LineDiv = styled.div`
   width: 10px;
@@ -98,6 +103,9 @@ export const UserImg = styled.img`
   width: 50px;
   background-color: white;
   border-radius: 50px;
+  @media ${breakPoints.mobile} {
+    width: 80%;
+  }
 `;
 
 export const BtnWrapper = styled.div`
@@ -121,12 +129,19 @@ export const CommentUser = styled.span`
   font-weight: 800;
   margin-right: 20px;
   margin-left: 20px;
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
+    font-weight: 500;
+  }
 `;
 
 export const CommentDate = styled.span`
   color: gray;
   margin-right: 10px;
   margin-left: auto;
+  @media ${breakPoints.mobile} {
+    margin-right: 0;
+  }
 `;
 
 export const CommentContents = styled.div`
@@ -140,4 +155,10 @@ export const CommentFooter = styled.div`
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
+`;
+
+export const MyRate = styled(Rate)`
+  @media ${breakPoints.mobile} {
+    width: 50%;
+  }
 `;

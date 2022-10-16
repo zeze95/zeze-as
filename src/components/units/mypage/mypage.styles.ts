@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../styles/media";
 interface IisActive {
   isActive: boolean;
 }
@@ -152,6 +153,10 @@ export const SideMenuText = styled.div`
   margin-right: 5%;
   font-size: ${(props: IisActive) => (props.isActive ? "22px" : "16px")};
   border-radius: 10px 0 0 10px;
+  @media ${breakPoints.mobile} {
+    font-size: 14px;
+    margin-right: 0;
+  }
 `;
 
 export const ListWrapeer = styled.div`
@@ -166,6 +171,6 @@ export const ListWrapeer = styled.div`
   @media (max-width: 991px) {
     width: 100%;
     border: none;
-    border-radius: 0;
+    border-radius: 0 0 10px 10px;
   }
 `;

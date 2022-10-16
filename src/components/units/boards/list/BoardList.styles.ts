@@ -34,6 +34,10 @@ export const Team = styled.div`
   :hover {
     color: red;
   }
+  @media ${breakPoints.mobile} {
+    height: auto;
+    max-height: 20vh;
+  }
 `;
 
 export const HeaderFixTen = styled.div`
@@ -67,6 +71,7 @@ export const FixName = styled.div`
   text-align: center;
   @media ${breakPoints.mobile} {
     font-size: 10px;
+    overflow: hidden;
   }
 `;
 
@@ -79,6 +84,7 @@ export const TitleList = styled.div`
   }
   @media ${breakPoints.mobile} {
     font-size: 12px;
+    height: auto;
   }
 `;
 

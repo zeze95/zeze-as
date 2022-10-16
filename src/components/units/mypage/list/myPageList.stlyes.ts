@@ -44,6 +44,7 @@ export const HeaderName = styled.div`
   font-size: 20px;
   @media (max-width: 991px) {
     width: 30%;
+    font-size: 16px;
   }
 `;
 export const HeaderPrice = styled.div`
@@ -51,6 +52,7 @@ export const HeaderPrice = styled.div`
   font-size: 20px;
   @media (max-width: 991px) {
     width: 20%;
+    font-size: 16px;
   }
 `;
 export const HeaderRemarks = styled.div`
@@ -58,6 +60,7 @@ export const HeaderRemarks = styled.div`
   font-size: 20px;
   @media (max-width: 991px) {
     display: none;
+    font-size: 16px;
   }
 `;
 export const HeaderSeller = styled.div`
@@ -65,6 +68,7 @@ export const HeaderSeller = styled.div`
   font-size: 20px;
   @media (max-width: 991px) {
     width: 20%;
+    font-size: 16px;
   }
 `;
 export const HeaderCreateTime = styled.div`
@@ -72,6 +76,7 @@ export const HeaderCreateTime = styled.div`
   font-size: 20px;
   @media (max-width: 991px) {
     width: 30%;
+    font-size: 16px;
   }
 `;
 
