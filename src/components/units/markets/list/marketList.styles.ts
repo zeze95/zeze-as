@@ -153,7 +153,7 @@ export const SellerWrapper = styled.div`
   gap: 1rem;
   border-left: 1px solid #d2d2d2;
   @media ${breakPoints.mobile} {
-    margin-left: 1vw;
+    font-size: 0.5rem;
   }
 `;
 

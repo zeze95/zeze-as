@@ -123,6 +123,7 @@ export const ItemTitle = styled.div`
   overflow: hidden;
   @media (max-width: 991px) {
     font-size: 15px;
+    height: 25px;
     /* height: auto; */
   }
 `;
@@ -150,6 +151,9 @@ export const Contents = styled.div`
   height: 60px;
   font-size: 16px;
   overflow: hidden;
+  @media ${breakPoints.mobile} {
+    height: auto;
+  }
 `;
 export const Price = styled.div`
   width: 100%;

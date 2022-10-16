@@ -68,7 +68,7 @@ export default function LinkPage() {
     {
       name: "트리바고",
       page: "https://www.trivago.co.kr/",
-      image: "/linklogo/trivago_KR_logo.png",
+      image: "/linklogo/Trivago_KR_logo.png",
     },
     {
       name: "스카이스캐너",

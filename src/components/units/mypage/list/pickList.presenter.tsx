@@ -11,7 +11,7 @@ export default function PicklistPageUI(props: IPicklistPageUI) {
     <>
       <Pick.Header> 나의 찜 목록 </Pick.Header>
       <Pick.HeaderWrapper>
-        <Pick.HeaderName>이름</Pick.HeaderName>
+        <Pick.HeaderName>상품명</Pick.HeaderName>
         <Pick.HeaderPrice>가격</Pick.HeaderPrice>
         <Pick.HeaderRemarks>내용</Pick.HeaderRemarks>
         <Pick.HeaderSeller>판매자</Pick.HeaderSeller>

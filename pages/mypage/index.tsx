@@ -5,5 +5,5 @@ const MyPage = () => {
   return <MyPageContainer />;
 };
 
-export default MyPage;
-// export default WithAuth(MyPage);
+// export default MyPage;
+export default WithAuth(MyPage);

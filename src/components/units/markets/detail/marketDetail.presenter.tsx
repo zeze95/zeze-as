@@ -33,7 +33,7 @@ export default function MarketsDetailUI(props: IMarketsDetailUI) {
                 placement="topRight"
                 title={`${props.data?.fetchUseditem.pickedCount}개의 좋아요가 있습니다`}
               >
-                <LikeOutlined onClick={props.onClickBasket} />
+                <LikeOutlined onClick={props.onClickPick} />
               </Tooltip>
               <Tooltip
                 placement="topRight"

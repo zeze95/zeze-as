@@ -32,6 +32,7 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-align: center;
   margin-bottom: 10px;
   border-bottom: 1px solid #d2d2d2;
   gap: 1rem;
@@ -42,6 +43,7 @@ export const HeaderName = styled.div`
   width: 20%;
   overflow: hidden;
   font-size: 20px;
+
   @media (max-width: 991px) {
     width: 30%;
     font-size: 16px;
@@ -50,6 +52,7 @@ export const HeaderName = styled.div`
 export const HeaderPrice = styled.div`
   width: 15%;
   font-size: 20px;
+
   @media (max-width: 991px) {
     width: 20%;
     font-size: 16px;
@@ -58,6 +61,7 @@ export const HeaderPrice = styled.div`
 export const HeaderRemarks = styled.div`
   width: 40%;
   font-size: 20px;
+
   @media (max-width: 991px) {
     display: none;
     font-size: 16px;
