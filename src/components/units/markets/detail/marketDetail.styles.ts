@@ -20,18 +20,19 @@ export const RemarksWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 export const PriceBox = styled.div`
   width: auto;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   padding: 0 1rem;
-  border-bottom: 5px solid #6e85b7;
+  border-bottom: 6px double #6e85b7;
   @media ${breakPoints.mobile} {
     font-size: 16px;
   }
@@ -42,7 +43,7 @@ export const TagWrapper = styled.div`
   height: auto;
   display: flex;
   flex-direction: row;
-  flex-direction: center;
+  justify-content: center;
   align-items: center;
   color: #dbdbdb;
   gap: 10px;
@@ -160,6 +161,7 @@ export const Title = styled.div`
 `;
 
 export const Contents = styled.div`
+  height: auto;
   padding-top: 40px;
   padding-bottom: 120px;
   display: flex;
