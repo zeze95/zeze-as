@@ -23,14 +23,8 @@ export default function LayoutHeaderUI(props: IProps) {
             </>
           ) : (
             <>
-              <S.Btn onClick={onClickMoveToPage("/signup")}>
-                회원가입
-                <S.HeaderImg src="/camp/sign-post/animat-sign-post-color.gif" />
-              </S.Btn>
-              <S.Btn onClick={onClickMoveToPage("/login")}>
-                로그인
-                <S.HeaderImg src="/camp/compass/animat-compass-color.gif" />
-              </S.Btn>
+              <S.Btn onClick={onClickMoveToPage("/signup")}>회원가입</S.Btn>
+              <S.Btn onClick={onClickMoveToPage("/login")}>로그인</S.Btn>
             </>
           )}
         </S.MarginBox>

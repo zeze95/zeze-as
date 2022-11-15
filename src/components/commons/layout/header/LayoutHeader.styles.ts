@@ -57,7 +57,7 @@ export const HeaderImg = styled.img`
 `;
 
 export const Btn = styled.span`
-  width: 100px;
+  width: 90px;
   height: 30px;
   background-color: #f8f9d7;
   border-radius: 10px;

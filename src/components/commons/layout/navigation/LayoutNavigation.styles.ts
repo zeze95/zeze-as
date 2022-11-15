@@ -43,10 +43,10 @@ export const MenuBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 1px solid #f8f9d7;
   background-color: ${(props: IActive) =>
-    props.isActive ? "#6e85b7" : "#C4DDFF"};
+    props.isActive ? "#6e85b7" : "#ffffff"};
   color: ${(props: IActive) => (props.isActive ? "#ffffff" : "")};
   cursor: pointer;
   :hover {

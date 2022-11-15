@@ -81,7 +81,14 @@ export default function CommentListUIAdd(props: ICommentListUIPropsAdd) {
               </S.BtnWrapper>
             </S.IconSection>
             <S.TextSection>
-              <S.CommentContents>{props.el?.contents}</S.CommentContents>
+              <S.CommentContents>
+                {props.el?.contents === undefined ||
+                props.el?.contents == null ? (
+                  <span>지금은 댓글을 확인할수 없습니다.</span>
+                ) : (
+                  props.el?.contents
+                )}
+              </S.CommentContents>
               <S.CommentFooter>
                 <S.CommentDate>{getDate(props.el?.createdAt)}</S.CommentDate>
               </S.CommentFooter>

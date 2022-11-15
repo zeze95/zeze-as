@@ -35,7 +35,7 @@ export default function MainMarketUI(props: IMainMarketUI) {
               {typeof window !== "undefined" && (
                 <Market.Contents
                   dangerouslySetInnerHTML={{
-                    __html: Dompurify.sanitize(el.contents.slice(0, 45)),
+                    __html: Dompurify.sanitize(el.contents.slice(0, 55)),
                   }}
                 />
               )}

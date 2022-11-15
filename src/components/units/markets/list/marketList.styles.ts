@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 60px;
+  height: 90px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -23,7 +23,8 @@ export const Header = styled.div`
   position: sticky;
   top: 0;
   background-color: #ffffff;
-  border-bottom: 1px solid black;
+  padding-bottom: 30px;
+  border-bottom: 3px solid gray;
   @media ${breakPoints.tablet} {
     top: 11vh;
     border: none;
@@ -33,7 +34,12 @@ export const Header = styled.div`
     border: none;
   }
 `;
-
+export const TableLine = styled.div`
+  border-bottom: 2px solid gray;
+  margin-top: 10px;
+  width: 100%;
+  height: 20px;
+`;
 // export const TypeBtn = styled.div`
 //   display: flex;
 //   justify-content: center;
