@@ -1,5 +1,4 @@
 
-https://zeze-as.site/
 
 ## Randing 
 
